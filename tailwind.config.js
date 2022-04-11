@@ -1,11 +1,38 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
-  content: [
-    './src/components/**/*.{ts,tsx,js,jsx}', 
-    './src/pages/**/*.{ts,tsx,js,jsx}'
-  ],
-  theme: {
-    extend: {},
-  },
-  variants: {},
-  plugins: [],
-}
+	content: [
+		"./src/components/**/*.{ts,tsx,js,jsx}",
+		"./src/pages/**/*.{ts,tsx,js,jsx}"
+	],
+	theme: {
+		extend: {
+			fontFamily: {
+				heading: ["Inter", ...defaultTheme.fontFamily.sans],
+				sans: ["Outfit", ...defaultTheme.fontFamily.sans]
+			}
+		}
+	},
+	variants: {},
+	corePlugins: {
+		container: false
+	},
+	plugins: [
+		function ({ addComponents }) {
+			addComponents({
+				".container": {
+					width: "100%",
+					"@screen sm": {
+						width: "600px"
+					},
+					"@screen md": {
+						width: "700px"
+					},
+					"@screen lg": {
+						width: "800px"
+					}
+				}
+			});
+		}
+	]
+};
