@@ -15,20 +15,22 @@ export default function Discord() {
 		<div className="flex flex-wrap gap-4 mb-4">
 			<div className="flex gap-4 items-center p-4 bg-slate-900 rounded-lg">
 				{lanyard?.discord_user.avatar && (
-					<Image
-						src={`https://cdn.discordapp.com/avatars/${USER_ID}/${
-							lanyard?.discord_user.avatar
-						}.${
-							lanyard?.discord_user.avatar.startsWith("a_")
-								? "gif"
-								: "webp"
-						}?size=256`}
-						alt="Discord Avatar"
-						width={80}
-						height={80}
-						priority={true}
-						className="rounded-full"
-					/>
+					<div className="w-20 h-20">
+						<Image
+							src={`https://cdn.discordapp.com/avatars/${USER_ID}/${
+								lanyard?.discord_user.avatar
+							}.${
+								lanyard?.discord_user.avatar.startsWith("a_")
+									? "gif"
+									: "webp"
+							}?size=256`}
+							alt="Discord Avatar"
+							width={256}
+							height={256}
+							priority={true}
+							className="w-20 h-20 rounded-full"
+						/>
+					</div>
 				)}
 				<div>
 					<div>
@@ -48,19 +50,21 @@ export default function Discord() {
 				</div>
 			</div>
 			<div className="flex gap-4 items-center p-4 bg-green-900 rounded-lg">
-				<Image
-					src={
-						lanyard?.spotify?.album_art_url ??
-						"/images/emptysong.jpg"
-					}
-					alt="Spotify Album Art"
-					width={80}
-					height={80}
-					priority={true}
-					className="rounded-lg"
-				/>
+				<div className="w-20 h-20">
+					<Image
+						src={
+							lanyard?.spotify?.album_art_url ??
+							"/images/emptysong.jpg"
+						}
+						alt="Spotify Album Art"
+						width={256}
+						height={256}
+						priority={true}
+						className="rounded-lg"
+					/>
+				</div>
 				<div>
-					<h4>Spotify</h4>
+					<div>Spotify</div>
 					<p className="text-base">
 						{lanyard?.listening_to_spotify ? (
 							<>
