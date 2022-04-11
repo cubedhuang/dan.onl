@@ -7,7 +7,7 @@ export default function Custom404() {
 				404 &ndash; page not found...
 			</h1>
 			<p className="mb-4">
-				Seems like this page doesn&apos;t exist. Let's{" "}
+				Seems like this page doesn&apos;t exist. Let&apos;s{" "}
 				<Link href="/">
 					<a className="border-b-2 border-b-white hover:border-b-transparent transition">
 						go back

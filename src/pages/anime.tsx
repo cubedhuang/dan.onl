@@ -11,7 +11,7 @@ export default function Anime() {
 
 			<h1 className="heading">Anime ✨</h1>
 
-			<p className="text-lg mb-4">Some anime I've watched.</p>
+			<p className="text-lg mb-4">Some anime I&apos;ve watched.</p>
 
 			<AnimeCard
 				title="Tokyo Ghoul"

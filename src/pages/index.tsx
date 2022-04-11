@@ -31,7 +31,7 @@ export default function Home({
 			<h1 className="heading mb-2">Daniel 👋!</h1>
 
 			<p className="mb-4">
-				Hi! I'm Daniel, a{" "}
+				Hi! I&apos;m Daniel, a{" "}
 				<span className="text-blue-400">{age}-year-old developer</span>{" "}
 				from <span className="text-rose-400">Atlanta</span>.
 			</p>
