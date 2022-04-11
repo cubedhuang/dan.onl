@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Outfit:wght@500;700&display=swap");
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+/* Your own custom component styles */
+
+@import "tailwindcss/utilities";
+
+@layer base {
+	html,
+	body {
+		background: black;
+	}
+
+	html {
+		scrollbar-color: #fff4 #0004;
+		scrollbar-width: thin;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		*,
+		::before,
+		::after {
+			animation-delay: -1ms !important;
+			animation-duration: 1ms !important;
+			animation-iteration-count: 1 !important;
+			background-attachment: initial !important;
+			scroll-behavior: auto !important;
+			transition-duration: 0s !important;
+			transition-delay: 0s !important;
+		}
+	}
+
+	@keyframes fade {
+		0% {
+			opacity: 0;
+			transform: translateY(0.5rem);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@for $i from 1 through 20 {
+		.main > :nth-child(#{$i}) {
+			animation-name: fade;
+			animation-duration: 0.5s;
+			animation-delay: #{$i / 8}s;
+			animation-fill-mode: both;
+		}
+	}
+}
+
+@layer components {
+	.heading {
+		@apply font-heading font-extrabold text-6xl tracking-tighter;
+	}
+}
