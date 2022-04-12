@@ -11,7 +11,7 @@ export default function Discord() {
 
 	return (
 		<>
-			<div className="mb-4 mr-4 w-max flex gap-4 items-center px-4 py-2 bg-slate-900 text-base leading-snug rounded-lg">
+			<div className="mb-4 mr-4 w-max max-w-full flex gap-4 items-center px-4 py-2 bg-slate-900 text-base leading-snug rounded-lg">
 				{lanyard?.discord_user.avatar ? (
 					<div className="w-12 h-12">
 						<Image
@@ -53,7 +53,7 @@ export default function Discord() {
 					<div className="w-32 opacity-80">Loading...</div>
 				)}
 			</div>
-			<div className="w-max flex gap-4 items-center px-4 py-2 bg-green-900 text-base leading-snug rounded-lg">
+			<div className="w-max max-w-full flex gap-4 items-center px-4 py-2 bg-green-900 text-base leading-snug rounded-lg">
 				<div className="w-12 h-12">
 					<Image
 						src={
