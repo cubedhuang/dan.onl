@@ -14,8 +14,26 @@
 	}
 
 	html {
-		scrollbar-color: #fff4 #0004;
+		overflow-y: auto;
+		overflow-x: hidden;
+		scrollbar-color: #fff2 #000;
 		scrollbar-width: thin;
+	}
+
+	::-webkit-scrollbar {
+		width: 8px;
+	}
+	::-webkit-scrollbar-track {
+		background: black;
+	}
+	::-webkit-scrollbar-thumb {
+		background: #ffffff22;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: #ffffff18;
+	}
+	::-webkit-scrollbar-thumb:active {
+		background: #ffffff10;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
