@@ -4,7 +4,7 @@ import { LanyardData, useLanyard } from "react-use-lanyard";
 const USER_ID = "299707523370319883";
 
 export default function Discord() {
-	const { status: lanyard, loading } = useLanyard({
+	const { status: lanyard } = useLanyard({
 		userId: USER_ID,
 		socket: true
 	});
