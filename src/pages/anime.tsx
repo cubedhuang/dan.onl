@@ -9,7 +9,7 @@ export default function Anime() {
 				description="Some anime I've watched."
 			/>
 
-			<h1 className="heading">Anime ✨</h1>
+			<h1 className="heading mb-2">Anime ✨</h1>
 
 			<p className="text-lg mb-4">Some anime I&apos;ve watched.</p>
 
@@ -18,6 +18,12 @@ export default function Anime() {
 				description="Cannibalism."
 				image="/images/anime/tokyo.jpg"
 				link="https://anilist.co/anime/20605/Tokyo-Ghoul/"
+			/>
+			<AnimeCard
+				title="Jujutsu Kaisen"
+				description="Screw you guys, I'm going home!"
+				image="/images/anime/jujutsu.jpg"
+				link="https://anilist.co/anime/113415/Jujutsu-Kaisen/"
 			/>
 			<AnimeCard
 				title="Saiki K."
