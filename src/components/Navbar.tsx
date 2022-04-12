@@ -2,7 +2,7 @@ import ActiveLink from "./ActiveLink";
 
 export default function Navbar() {
 	return (
-		<nav className="mb-12 flex flex-wrap items-center gap-x-8 font-extrabold">
+		<nav className="mb-12 flex flex-wrap items-center gap-x-8 font-bold">
 			<ActiveLink
 				href="/"
 				activeClass="border-b-white"
