@@ -50,6 +50,18 @@
 		}
 	}
 
+	.main > * {
+		animation-name: fade;
+		animation-duration: 0.5s;
+		animation-fill-mode: both;
+	}
+
+	@for $i from 1 through 20 {
+		.main > :nth-child(#{$i}) {
+			animation-delay: #{$i / 8}s;
+		}
+	}
+
 	@keyframes fade {
 		0% {
 			opacity: 0;
@@ -58,15 +70,6 @@
 		100% {
 			opacity: 1;
 			transform: translateY(0);
-		}
-	}
-
-	@for $i from 1 through 20 {
-		.main > :nth-child(#{$i}) {
-			animation-name: fade;
-			animation-duration: 0.5s;
-			animation-delay: #{$i / 8}s;
-			animation-fill-mode: both;
 		}
 	}
 }
