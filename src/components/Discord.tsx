@@ -4,12 +4,10 @@ import { LanyardData, useLanyard } from "react-use-lanyard";
 const USER_ID = "299707523370319883";
 
 export default function Discord() {
-	const { status: lanyard } = useLanyard({
+	const { status: lanyard, loading } = useLanyard({
 		userId: USER_ID,
 		socket: true
 	});
-
-	if (!lanyard) return null;
 
 	return (
 		<>
@@ -31,23 +29,29 @@ export default function Discord() {
 							className="w-20 h-20 rounded-full"
 						/>
 					</div>
-				) : null}
-				<div>
-					<p>
-						{lanyard?.discord_user.username}
-						<span className="opacity-80">
-							#{lanyard?.discord_user.discriminator}
-						</span>
-					</p>
-					<p>
-						{lanyard?.activities[0]?.type === 4
-							? lanyard?.activities[0]?.state
-							: null}
-					</p>
-					<p className={getStatusClass(lanyard)}>
-						{getStatusString(lanyard)}
-					</p>
-				</div>
+				) : (
+					<div className="w-12 h-12 bg-gray-800 rounded-full"></div>
+				)}
+				{lanyard ? (
+					<div>
+						<p>
+							{lanyard?.discord_user.username}
+							<span className="opacity-80">
+								#{lanyard?.discord_user.discriminator ?? "0000"}
+							</span>
+						</p>
+						<p>
+							{lanyard?.activities[0]?.type === 4
+								? lanyard?.activities[0]?.state
+								: null}
+						</p>
+						<p className={getStatusClass(lanyard)}>
+							{getStatusString(lanyard)}
+						</p>
+					</div>
+				) : (
+					<div className="w-32 opacity-80">Loading...</div>
+				)}
 			</div>
 			<div className="w-max flex gap-4 items-center px-4 py-2 bg-green-900 text-base leading-snug rounded-lg">
 				<div className="w-12 h-12">
@@ -90,7 +94,7 @@ export default function Discord() {
 }
 
 function getStatusString(lanyard: LanyardData | undefined) {
-	if (!lanyard) return "";
+	if (!lanyard) return "Loading...";
 
 	const strMap: Record<string, string> = {
 		online: "Online",
@@ -108,7 +112,7 @@ function getStatusString(lanyard: LanyardData | undefined) {
 }
 
 function getStatusClass(lanyard: LanyardData | undefined) {
-	if (!lanyard) return "offline";
+	if (!lanyard) return "text-gray-400";
 
 	const strMap: Record<string, string> = {
 		online: "text-emerald-500",
