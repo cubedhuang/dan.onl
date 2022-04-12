@@ -12,10 +12,10 @@ export default function Discord() {
 	if (!lanyard) return null;
 
 	return (
-		<div className="flex flex-wrap gap-4 mb-4">
-			<div className="flex gap-4 items-center p-4 bg-slate-900 rounded-lg">
-				{lanyard?.discord_user.avatar && (
-					<div className="w-20 h-20">
+		<>
+			<div className="mb-4 mr-4 w-max flex gap-4 items-center px-4 py-2 bg-slate-900 text-base leading-snug rounded-lg">
+				{lanyard?.discord_user.avatar ? (
+					<div className="w-12 h-12">
 						<Image
 							src={`https://cdn.discordapp.com/avatars/${USER_ID}/${
 								lanyard?.discord_user.avatar
@@ -31,26 +31,26 @@ export default function Discord() {
 							className="w-20 h-20 rounded-full"
 						/>
 					</div>
-				)}
+				) : null}
 				<div>
-					<div>
+					<p>
 						{lanyard?.discord_user.username}
-						<span className="opacity-70">
+						<span className="opacity-80">
 							#{lanyard?.discord_user.discriminator}
 						</span>
-					</div>
-					<p className="text-base">
+					</p>
+					<p>
 						{lanyard?.activities[0]?.type === 4
 							? lanyard?.activities[0]?.state
 							: null}
 					</p>
-					<p className={`text-base ${getStatusClass(lanyard)}`}>
+					<p className={getStatusClass(lanyard)}>
 						{getStatusString(lanyard)}
 					</p>
 				</div>
 			</div>
-			<div className="flex gap-4 items-center p-4 bg-green-900 rounded-lg">
-				<div className="w-20 h-20">
+			<div className="w-max flex gap-4 items-center px-4 py-2 bg-green-900 text-base leading-snug rounded-lg">
+				<div className="w-12 h-12">
 					<Image
 						src={
 							lanyard?.spotify?.album_art_url ??
@@ -64,8 +64,7 @@ export default function Discord() {
 					/>
 				</div>
 				<div>
-					<div>Spotify</div>
-					<p className="text-base">
+					<p>
 						{lanyard?.listening_to_spotify ? (
 							<>
 								<b>{lanyard?.spotify?.song}</b> by{" "}
@@ -75,13 +74,18 @@ export default function Discord() {
 							"Not Listening to Anything"
 						)}
 					</p>
-					<p className="text-base opacity-70">
-						{lanyard?.listening_to_spotify &&
-							lanyard?.spotify?.album}
+					<p className="opacity-80">
+						{lanyard?.listening_to_spotify
+							? lanyard?.spotify?.album
+							: null}
+					</p>
+					<p className="opacity-80">
+						{lanyard?.listening_to_spotify ? "Listening on " : null}
+						Spotify
 					</p>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 }
 
