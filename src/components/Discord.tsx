@@ -1,5 +1,8 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { LanyardData, useLanyard } from "react-use-lanyard";
+
+import type { SpotifyResponseSuccess } from "../pages/api/track";
 
 const USER_ID = "299707523370319883";
 
@@ -8,6 +11,20 @@ export default function Discord() {
 		userId: USER_ID,
 		socket: true
 	});
+	const [track, setTrack] = useState<SpotifyResponseSuccess | null>(null);
+
+	useEffect(() => {
+		if (!lanyard?.spotify) return;
+
+		fetch(`/api/track?id=${lanyard.spotify.track_id}`, {
+			cache: "no-cache"
+		})
+			.then(res => res.json())
+			.then(track => {
+				setTrack(track);
+			})
+			.catch(console.error);
+	}, [lanyard]);
 
 	return (
 		<>
@@ -71,17 +88,58 @@ export default function Discord() {
 					<p>
 						{lanyard?.listening_to_spotify ? (
 							<>
-								<b>{lanyard?.spotify?.song}</b> by{" "}
-								{lanyard?.spotify?.artist}
+								<a
+									href={`https://open.spotify.com/track/${lanyard?.spotify?.track_id}`}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="font-bold border-b border-[#fff4] transition hover:border-white"
+								>
+									{lanyard?.spotify?.song}
+								</a>{" "}
+								by{" "}
+								{track
+									? track.artists.map((artist, i) => (
+											<span key={track.id + artist.id}>
+												<a
+													href={
+														artist.external_urls
+															.spotify
+													}
+													target="_blank"
+													rel="noopener noreferrer"
+													className="border-b border-[#fff4] transition hover:border-white"
+												>
+													{artist.name}
+												</a>
+												{i < track.artists.length - 1
+													? ", "
+													: null}
+											</span>
+									  ))
+									: lanyard?.spotify?.artist}
 							</>
 						) : (
 							"Not Listening to Anything"
 						)}
 					</p>
 					<p className="opacity-80">
-						{lanyard?.listening_to_spotify
-							? lanyard?.spotify?.album
-							: null}
+						{lanyard?.spotify?.album ? (
+							track ? (
+								<>
+									on{" "}
+									<a
+										href={track.album.external_urls.spotify}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="border-b border-[#fff4] transition hover:border-white"
+									>
+										{track.album.name}
+									</a>
+								</>
+							) : (
+								<>on {lanyard.spotify.album}</>
+							)
+						) : null}
 					</p>
 					<p className="opacity-80">
 						{lanyard?.listening_to_spotify ? "Listening on " : null}
