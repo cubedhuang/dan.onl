@@ -10,12 +10,11 @@
 @layer base {
 	html,
 	body {
-		background: black;
+		@apply bg-black;
 	}
 
 	html {
-		overflow-y: auto;
-		overflow-x: hidden;
+		@apply overflow-x-hidden overflow-y-auto;
 		scrollbar-color: #fff2 #000;
 		scrollbar-width: thin;
 	}
@@ -52,13 +51,13 @@
 
 	.main > * {
 		animation-name: fade;
-		animation-duration: 0.5s;
+		animation-duration: 0.3s;
 		animation-fill-mode: both;
 	}
 
 	@for $i from 1 through 20 {
 		.main > :nth-child(#{$i}) {
-			animation-delay: #{$i / 8}s;
+			animation-delay: #{$i / 10}s;
 		}
 	}
 
