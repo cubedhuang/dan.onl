@@ -9,7 +9,7 @@ export default function Custom404() {
 			<p>
 				Seems like this page doesn&apos;t exist. Let&apos;s{" "}
 				<Link href="/">
-					<a className="border-b-2 border-b-white hover:border-b-transparent transition">
+					<a className="border-b border-[#fff4] hover:border-white transition">
 						go back
 					</a>
 				</Link>
