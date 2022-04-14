@@ -27,7 +27,7 @@ export default function AnimeCard({
 				objectFit="cover"
 				className="rounded-lg transition duration-300 group-hover:scale-[1.02]"
 			/>
-			<div className="z-20 transition duration-300 scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100">
+			<div className="z-20 w-full transition duration-300 scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100">
 				<h2 className="font-bold text-3xl">{title}</h2>
 				<p className="text-lg">{description}</p>
 			</div>
