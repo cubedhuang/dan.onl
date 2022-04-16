@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { LanyardData, useLanyard } from "react-use-lanyard";
 
-import type { SpotifyResponseSuccess } from "../pages/api/track";
+import type { TrackResponseSuccess } from "../pages/api/track";
 
 const USER_ID = "299707523370319883";
 
@@ -11,7 +11,7 @@ export default function Discord() {
 		userId: USER_ID,
 		socket: true
 	});
-	const [track, setTrack] = useState<SpotifyResponseSuccess | null>(null);
+	const [track, setTrack] = useState<TrackResponseSuccess | null>(null);
 
 	useEffect(() => {
 		if (!lanyard?.spotify) return;

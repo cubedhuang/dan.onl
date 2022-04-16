@@ -1,9 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import Spotify from "spotify-web-api-node";
 
-export type SpotifyResponseSuccess = SpotifyApi.SingleTrackResponse;
-export type SpotifyResponseError = { error: string };
-export type SpotifyResponse = SpotifyResponseSuccess | SpotifyResponseError;
+export type TrackResponseSuccess = SpotifyApi.SingleTrackResponse;
+export type TrackResponseError = { error: string };
+export type TrackResponse = TrackResponseSuccess | TrackResponseError;
 
 const api = new Spotify({
 	clientId: process.env.SPOTIFY_CLIENT_ID,
@@ -13,7 +13,7 @@ let expirationTime = 0;
 
 export default async function handler(
 	req: NextApiRequest,
-	res: NextApiResponse<SpotifyResponse>
+	res: NextApiResponse<TrackResponse>
 ) {
 	if (req.method !== "GET") {
 		res.status(405).json({ error: "Method not allowed." });
