@@ -27,13 +27,13 @@ export function TrackList({ tracks, priority = false }: TrackListProps) {
 							/>
 						</div>
 						<div className="z-20 absolute inset-4 flex flex-col justify-end transition duration-300 scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100">
-							<h2 className="font-bold text-2xl overflow-ellipsis leading-6 mb-1">
+							<p className="font-bold text-xl md:text-2xl overflow-ellipsis leading-none md:leading-none mb-1">
 								{track.name}
-							</h2>
+							</p>
 							{track.artists.map(artist => (
 								<p
 									key={artist.id}
-									className="text-base leading-5"
+									className="text-sm md:text-base leading-tight md:leading-tight opacity-80"
 								>
 									{artist.name}
 								</p>
