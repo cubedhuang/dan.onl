@@ -12,7 +12,7 @@ export default function ActiveLink({
 	children,
 	href,
 	activeClass,
-	nonActiveClass,
+	nonActiveClass = "",
 	...props
 }: ActiveLinkProps) {
 	const router = useRouter();
