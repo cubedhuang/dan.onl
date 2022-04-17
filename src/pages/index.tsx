@@ -1,8 +1,8 @@
 import moment from "moment-timezone";
 import { InferGetServerSidePropsType } from "next";
 import Image from "next/image";
-import Clock from "react-live-clock";
 
+import { Clock } from "../components/Clock";
 import Discord from "../components/Discord";
 import GenericMeta from "../components/GenericMeta";
 import { socials } from "../data";
@@ -12,14 +12,14 @@ const birthday = moment(new Date(2006, 4, 17));
 export async function getServerSideProps() {
 	return {
 		props: {
-			startTime: Date.now(),
+			time: Date.now(),
 			age: moment().diff(birthday, "years").toString()
 		}
 	};
 }
 
 export default function Home({
-	startTime,
+	time,
 	age
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	return (
@@ -59,12 +59,13 @@ export default function Home({
 
 			<p className="mb-4 text-base text-gray-300">
 				Atlanta &middot;{" "}
-				<Clock
+				{/* <Clock
 					format={"dddd, Do MMMM YYYY · HH:mm:ss"}
 					ticking={true}
 					timezone={"US/Eastern"}
 					date={startTime}
-				/>
+				/> */}
+				<Clock time={time} />
 			</p>
 
 			<Discord />
