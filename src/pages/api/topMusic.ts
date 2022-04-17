@@ -28,14 +28,14 @@ export default async function handler(
 	}
 
 	try {
-		if (Date.now() > expirationTime) {
-			const response = await api.refreshAccessToken();
-			api.setAccessToken(response.body.access_token);
-
-			expirationTime = Date.now() + response.body.expires_in * 1000;
-		}
-
 		if (Date.now() > cachedTime) {
+			if (Date.now() > expirationTime) {
+				const response = await api.refreshAccessToken();
+				api.setAccessToken(response.body.access_token);
+
+				expirationTime = Date.now() + response.body.expires_in * 1000;
+			}
+
 			const short = await api.getMyTopTracks({
 				limit: 24,
 				time_range: "short_term"
@@ -55,7 +55,7 @@ export default async function handler(
 				long: long.body
 			};
 
-			cachedTime = Date.now() + 10 * 60 * 1000;
+			cachedTime = Date.now() + 24 * 60 * 60 * 1000;
 		}
 
 		res.status(200).json(cached);
