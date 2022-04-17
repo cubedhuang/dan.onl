@@ -14,6 +14,12 @@ export default function Anime() {
 			<p className="text-lg mb-4">Some anime I&apos;ve watched.</p>
 
 			<AnimeCard
+				title="Mairimashita! Iruma-kun"
+				description="Demon school!"
+				image="/images/anime/demon.jpg"
+				link="https://anilist.co/anime/107693/Mairimashita-Irumakun/"
+			/>
+			<AnimeCard
 				title="Tokyo Ghoul"
 				description="Cannibalism."
 				image="/images/anime/tokyo.jpg"
