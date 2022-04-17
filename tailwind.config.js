@@ -22,9 +22,6 @@ module.exports = {
 			addComponents({
 				".container": {
 					width: "100%",
-					"@screen sm": {
-						width: "600px"
-					},
 					"@screen md": {
 						width: "700px"
 					},
