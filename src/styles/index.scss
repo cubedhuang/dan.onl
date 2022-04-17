@@ -21,12 +21,19 @@
 
 	::-webkit-scrollbar {
 		width: 8px;
+		height: 8px;
 	}
 	::-webkit-scrollbar-track {
 		background: black;
 	}
 	::-webkit-scrollbar-thumb {
 		background: #ffffff22;
+	}
+	::-webkit-scrollbar-button {
+		display: none;
+	}
+	::-webkit-scrollbar-corner {
+		display: none;
 	}
 	::-webkit-scrollbar-thumb:hover {
 		background: #ffffff18;
@@ -76,5 +83,14 @@
 @layer components {
 	.heading {
 		@apply font-heading font-extrabold text-6xl tracking-tighter;
+	}
+}
+
+@layer utilities {
+	.no-scrollbar {
+		scrollbar-width: none;
+	}
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
 	}
 }
