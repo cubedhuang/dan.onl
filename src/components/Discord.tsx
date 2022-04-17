@@ -30,7 +30,7 @@ export default function Discord() {
 		<>
 			<div className="mb-4 mr-4 w-max max-w-full flex gap-4 items-center px-4 py-2 bg-slate-900 text-base leading-snug rounded-lg">
 				{lanyard?.discord_user.avatar ? (
-					<div className="w-12 h-12">
+					<div className="w-14 h-14">
 						<Image
 							src={`https://cdn.discordapp.com/avatars/${USER_ID}/${
 								lanyard?.discord_user.avatar
@@ -43,7 +43,7 @@ export default function Discord() {
 							width={256}
 							height={256}
 							priority={true}
-							className="w-20 h-20 rounded-full"
+							className="rounded-full"
 						/>
 					</div>
 				) : (
@@ -71,7 +71,7 @@ export default function Discord() {
 				)}
 			</div>
 			<div className="w-max max-w-full flex gap-4 items-center px-4 py-2 bg-green-900 text-base leading-snug rounded-lg">
-				<div className="w-12 h-12">
+				<div className="w-14 h-14">
 					<Image
 						src={
 							lanyard?.spotify?.album_art_url ??
