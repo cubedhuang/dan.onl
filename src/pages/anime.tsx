@@ -1,5 +1,7 @@
-import AnimeCard from "../components/AnimeCard";
+import Image from "next/image";
+
 import GenericMeta from "../components/GenericMeta";
+import { anime } from "../data";
 
 export default function Anime() {
 	return (
@@ -13,78 +15,27 @@ export default function Anime() {
 
 			<p className="text-lg mb-4">Some anime I&apos;ve watched.</p>
 
-			<AnimeCard
-				title="Mairimashita! Iruma-kun"
-				description="Demon school!"
-				image="/images/anime/demon.jpg"
-				link="https://anilist.co/anime/107693/Mairimashita-Irumakun/"
-			/>
-			<AnimeCard
-				title="Tokyo Ghoul"
-				description="Cannibalism."
-				image="/images/anime/tokyo.jpg"
-				link="https://anilist.co/anime/20605/Tokyo-Ghoul/"
-			/>
-			<AnimeCard
-				title="Jujutsu Kaisen"
-				description="Screw you guys, I'm going home!"
-				image="/images/anime/jujutsu.jpg"
-				link="https://anilist.co/anime/113415/Jujutsu-Kaisen/"
-			/>
-			<AnimeCard
-				title="Saiki K."
-				description="The world's unhappiest man."
-				image="/images/anime/saiki.jpg"
-				link="https://anilist.co/anime/21804/Saiki-Kusuo-no-nan/"
-			/>
-			<AnimeCard
-				title="Kakegurui"
-				description="Gambling addict."
-				image="/images/anime/yumeko.jpg"
-				link="https://anilist.co/anime/98314/Kakegurui/"
-			/>
-			<AnimeCard
-				title="Neon Genesis Evangelion"
-				description="Mental illness."
-				image="/images/anime/nge.jpg"
-				link="https://anilist.co/anime/30/Shin-Seiki-Evangelion/"
-			/>
-			<AnimeCard
-				title="Assassination Classroom"
-				description="Koro-sensei!"
-				image="/images/anime/classroom.jpg"
-				link="https://anilist.co/anime/20755/Ansatsu-Kyoushitsu"
-			/>
-			<AnimeCard
-				title="Hunter x Hunter"
-				description="Psychological horror."
-				image="/images/anime/hxh.jpg"
-				link="https://anilist.co/anime/11061/HUNTERHUNTER-2011/"
-			/>
-			<AnimeCard
-				title="Aggretsuko"
-				description="Corporate slave."
-				image="/images/anime/retsuko.jpg"
-				link="https://anilist.co/anime/101571/Aggressive-Retsuko/"
-			/>
-			<AnimeCard
-				title="Brand New Animal"
-				description="Animal racism."
-				image="/images/anime/bna.jpg"
-				link="https://anilist.co/anime/110354/BNA/"
-			/>
-			<AnimeCard
-				title="Rascal Does Not Dream"
-				description="Puberty syndrome?"
-				image="/images/anime/mai.jpg"
-				link="https://anilist.co/anime/101291/Rascal-Does-Not-Dream-of-Bunny-Girl-Senpai/"
-			/>
-			<AnimeCard
-				title="Beastars"
-				description="Carnivores."
-				image="/images/anime/beastars.png"
-				link="https://anilist.co/anime/107660/BEASTARS/"
-			/>
+			{anime.map(({ name, description, image, url }) => (
+				<a
+					key={name}
+					href={url}
+					target="_blank"
+					rel="noreferrer noopener"
+					className="group relative flex items-center justify-items-start h-40 px-4 sm:px-8 mb-4 overflow-hidden rounded-lg before:absolute before:inset-0 before:z-10 before:bg-black before:opacity-0 before:transition before:duration-300 hover:before:opacity-50"
+				>
+					<Image
+						src={image}
+						alt={name}
+						layout="fill"
+						objectFit="cover"
+						className="rounded-lg transition duration-300 group-hover:scale-[1.02]"
+					/>
+					<div className="z-20 w-full transition duration-300 scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100">
+						<h2 className="font-bold text-3xl">{name}</h2>
+						<p className="text-lg">{description}</p>
+					</div>
+				</a>
+			))}
 		</>
 	);
 }
