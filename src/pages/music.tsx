@@ -14,10 +14,7 @@ export default function Projects() {
 		fetch(`/api/topMusic`)
 			.then(res => res.json())
 			.then(info => {
-				if (info.error) {
-					console.error(info.error);
-					return;
-				}
+				if (info.error) return;
 				setTopMusic(info);
 			})
 			.catch(console.error);

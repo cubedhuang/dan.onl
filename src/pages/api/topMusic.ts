@@ -60,6 +60,6 @@ export default async function handler(
 
 		res.status(200).json(cached);
 	} catch (err) {
-		res.status(500).json({ error: JSON.stringify(err, null, 2) });
+		res.status(500).json({ error: err?.message });
 	}
 }
