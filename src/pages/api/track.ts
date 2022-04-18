@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import Spotify from "spotify-web-api-node";
 
 export type TrackResponseSuccess = SpotifyApi.SingleTrackResponse;
-export type TrackResponseError = { error: string };
+export type TrackResponseError = { error: unknown };
 export type TrackResponse = TrackResponseSuccess | TrackResponseError;
 
 const api = new Spotify({
@@ -45,6 +45,6 @@ export default async function handler(
 		const response = await api.getTrack(id);
 		res.status(200).json(response.body);
 	} catch (err) {
-		res.status(500).json({ error: err?.message });
+		res.status(500).json({ error: (err as any)?.message });
 	}
 }

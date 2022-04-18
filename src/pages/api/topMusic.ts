@@ -6,7 +6,7 @@ export type TopMusicResponseSuccess = {
 	medium: SpotifyApi.UsersTopTracksResponse;
 	long: SpotifyApi.UsersTopTracksResponse;
 };
-export type TopMusicResponseError = { error: string };
+export type TopMusicResponseError = { error: unknown };
 export type TopMusicResponse = TopMusicResponseSuccess | TopMusicResponseError;
 
 const api = new Spotify({
@@ -28,7 +28,7 @@ export default async function handler(
 	}
 
 	try {
-		if (Date.now() > cachedTime) {
+		if (!cached || Date.now() > cachedTime) {
 			if (Date.now() > expirationTime) {
 				const response = await api.refreshAccessToken();
 				api.setAccessToken(response.body.access_token);
@@ -60,6 +60,6 @@ export default async function handler(
 
 		res.status(200).json(cached);
 	} catch (err) {
-		res.status(500).json({ error: err?.message });
+		res.status(500).json({ error: (err as any)?.message });
 	}
 }
