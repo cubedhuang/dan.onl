@@ -59,12 +59,6 @@ export default function Home({
 
 			<p className="mb-4 text-base text-gray-300">
 				Atlanta &middot;{" "}
-				{/* <Clock
-					format={"dddd, Do MMMM YYYY · HH:mm:ss"}
-					ticking={true}
-					timezone={"US/Eastern"}
-					date={startTime}
-				/> */}
 				<Clock time={time} />
 			</p>
 
