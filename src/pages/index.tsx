@@ -13,7 +13,7 @@ export async function getServerSideProps() {
 	return {
 		props: {
 			time: Date.now(),
-			age: differenceInYears(birthday, Date.now()).toString()
+			age: differenceInYears(Date.now(), birthday).toString()
 		}
 	};
 }
@@ -58,8 +58,7 @@ export default function Home({
 			</p>
 
 			<p className="mb-4 text-base text-gray-300">
-				Atlanta &middot;{" "}
-				<Clock time={time} />
+				Atlanta &middot; <Clock time={time} />
 			</p>
 
 			<Discord />
