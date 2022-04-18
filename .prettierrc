@@ -1,6 +1,6 @@
 {
 	"arrowParens": "avoid",
-	"endOfLine": "lf",
+	"endOfLine": "auto",
 	"tabWidth": 4,
 	"trailingComma": "none",
 	"useTabs": true
