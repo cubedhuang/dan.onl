@@ -1,4 +1,4 @@
-import moment from "moment-timezone";
+import differenceInYears from "date-fns/differenceInYears";
 import { InferGetServerSidePropsType } from "next";
 import Image from "next/image";
 
@@ -7,13 +7,13 @@ import Discord from "../components/Discord";
 import GenericMeta from "../components/GenericMeta";
 import { socials } from "../data";
 
-const birthday = moment(new Date(2006, 4, 17));
+const birthday = new Date(2006, 4, 17);
 
 export async function getServerSideProps() {
 	return {
 		props: {
 			time: Date.now(),
-			age: moment().diff(birthday, "years").toString()
+			age: differenceInYears(birthday, Date.now()).toString()
 		}
 	};
 }

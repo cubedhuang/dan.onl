@@ -1,4 +1,4 @@
-import moment from "moment";
+import format from "date-fns/format";
 import { useEffect, useState } from "react";
 
 interface ClockProps {
@@ -6,15 +6,15 @@ interface ClockProps {
 }
 
 export function Clock({ time }: ClockProps) {
-	const [now, setNow] = useState(moment(time));
+	const [now, setNow] = useState(time);
 
 	useEffect(() => {
 		const id = setInterval(() => {
-			setNow(moment());
+			setNow(Date.now());
 		}, 1000);
 
 		return () => clearInterval(id);
 	}, []);
 
-	return <>{now.format("dddd, Do MMMM YYYY · HH:mm:ss")}</>;
+	return <>{format(now, "eeee, do MMMM y · HH:mm:ss")}</>;
 }
