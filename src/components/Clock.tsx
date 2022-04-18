@@ -1,4 +1,4 @@
-import format from "date-fns/format";
+import formatInTimeZone from "date-fns-tz/formatInTimeZone";
 import { useEffect, useState } from "react";
 
 interface ClockProps {
@@ -16,5 +16,13 @@ export function Clock({ time }: ClockProps) {
 		return () => clearInterval(id);
 	}, []);
 
-	return <>{format(now, "eeee, do MMMM y · HH:mm:ss")}</>;
+	return (
+		<>
+			{formatInTimeZone(
+				now,
+				"America/New_York",
+				"eeee, do MMMM y · HH:mm:ss"
+			)}
+		</>
+	);
 }
