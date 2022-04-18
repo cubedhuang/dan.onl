@@ -10,6 +10,7 @@
 		"start": "next start"
 	},
 	"dependencies": {
+		"@next/bundle-analyzer": "^12.1.5",
 		"moment-timezone": "^0.5.34",
 		"next": "12.1.0",
 		"react": "17.0.2",
