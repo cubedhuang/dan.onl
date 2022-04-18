@@ -45,7 +45,7 @@ export const projects: ProjectInfo[] = [
 		url: "https://boids.cubedhuang.com"
 	},
 	{
-		name: "Slate &ndash; Discord Bot",
+		name: "Slate – Discord Bot",
 		description:
 			"A Discord bot with loads of features like YouTube Together, logging ghost pings, playing music, and more.",
 		image: "/images/projects/slate.jpg",
