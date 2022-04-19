@@ -30,18 +30,14 @@ export default function Projects() {
 
 			<p className="text-lg mb-4">My top tracks on Spotify.</p>
 
-			{topMusic ? (
-				<>
-					<h2 className="font-bold text-3xl mb-4">Past Month</h2>
-					<TrackList tracks={topMusic.short.items} priority={true} />
+			<h2 className="font-bold text-3xl mb-4">Past Month</h2>
+			<TrackList tracks={topMusic?.short.items} priority={true} />
 
-					<h2 className="font-bold text-3xl mb-4">Past 6 Months</h2>
-					<TrackList tracks={topMusic.medium.items} />
+			<h2 className="font-bold text-3xl mb-4">Past 6 Months</h2>
+			<TrackList tracks={topMusic?.medium.items} />
 
-					<h2 className="font-bold text-3xl mb-4">All Time</h2>
-					<TrackList tracks={topMusic.long.items} />
-				</>
-			) : null}
+			<h2 className="font-bold text-3xl mb-4">All Time</h2>
+			<TrackList tracks={topMusic?.long.items} />
 		</>
 	);
 }
