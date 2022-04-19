@@ -9,7 +9,7 @@ export function TrackList({ tracks, priority = false }: TrackListProps) {
 	return (
 		<div className="relative w-screen ml-[calc(-50vw)] left-1/2 mb-12 [mask-image:linear-gradient(to_right,#000_0%,#000_75%,#0000_100%)] lg:[mask-image:linear-gradient(to_right,#0000_0%,#000_25%,#000_75%,#0000_100%)] before:z-10">
 			<div className="lg:px-[calc(50vw-400px)] md:px-[calc(50vw-350px)] px-8 lg:scroll-pl-[calc(50vw-400px)] md:scroll-pl-[calc(50vw-350px)] scroll-pl-8 grid grid-rows-2 grid-cols-[repeat(12,calc(9rem))] md:grid-cols-[repeat(12,calc(12rem))] lg:grid-cols-[repeat(12,calc(14rem))] grid-flow-col gap-4 overflow-scroll no-scrollbar snap-x snap-mandatory">
-				{tracks.map((track, i) => (
+				{tracks.map(track => (
 					<a
 						href={track.external_urls.spotify}
 						key={track.id}
