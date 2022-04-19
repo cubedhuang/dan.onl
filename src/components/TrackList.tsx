@@ -11,7 +11,11 @@ export function TrackList({ tracks, priority = false }: TrackListProps) {
 			<div className="lg:px-[calc(50vw-400px)] md:px-[calc(50vw-350px)] px-8 lg:scroll-pl-[calc(50vw-400px)] md:scroll-pl-[calc(50vw-350px)] scroll-pl-8 grid grid-rows-2 grid-cols-[repeat(12,calc(9rem))] md:grid-cols-[repeat(12,calc(12rem))] lg:grid-cols-[repeat(12,calc(14rem))] grid-flow-col gap-4 overflow-scroll no-scrollbar snap-x snap-mandatory">
 				{tracks
 					? tracks.map(track => (
-							<Track track={track} priority={priority} />
+							<Track
+								key={track.id}
+								track={track}
+								priority={priority}
+							/>
 					  ))
 					: [...new Array(24)].map((_, i) => (
 							<div
@@ -35,7 +39,6 @@ function Track({ track, priority }: TrackProps) {
 	return (
 		<a
 			href={track.external_urls.spotify}
-			key={track.id}
 			className="group relative snap-start snap-always rounded-lg before:absolute before:inset-0 before:z-10 before:bg-black before:opacity-0 before:transition before:duration-300 hover:before:opacity-50"
 		>
 			<div className="w-full rounded-lg overflow-hidden">
