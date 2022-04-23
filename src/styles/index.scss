@@ -79,7 +79,7 @@
 
 @layer components {
 	.heading {
-		@apply font-heading font-extrabold text-6xl tracking-tighter;
+		@apply flex items-center font-heading font-extrabold text-6xl tracking-tighter;
 	}
 }
 

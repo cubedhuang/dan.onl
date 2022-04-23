@@ -1,3 +1,4 @@
+import { MusicNoteIcon } from "@heroicons/react/solid";
 import { useEffect, useState } from "react";
 
 import GenericMeta from "../components/GenericMeta";
@@ -26,7 +27,10 @@ export default function Projects() {
 				description="My top music on Spotify."
 			/>
 
-			<h1 className="heading mb-2">Music 🎶</h1>
+			<h1 className="heading mb-2">
+				Music{" "}
+				<MusicNoteIcon className="ml-4 h-12 w-12 text-violet-400" />
+			</h1>
 
 			<p className="text-lg mb-4">My top tracks on Spotify.</p>
 

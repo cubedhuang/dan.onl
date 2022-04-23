@@ -1,3 +1,4 @@
+import { SparklesIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 
 import GenericMeta from "../components/GenericMeta";
@@ -11,7 +12,10 @@ export default function Anime() {
 				description="Some anime I've watched."
 			/>
 
-			<h1 className="heading mb-2">Anime ✨</h1>
+			<h1 className="heading mb-2">
+				Anime{" "}
+				<SparklesIcon className="ml-4 h-12 w-12 text-yellow-300" />
+			</h1>
 
 			<p className="text-lg mb-4">Some anime I&apos;ve watched.</p>
 
