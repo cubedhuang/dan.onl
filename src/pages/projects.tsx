@@ -14,7 +14,7 @@ export default function Projects() {
 
 			<h1 className="heading mb-8">
 				Projects{" "}
-				<CollectionIcon className="ml-4 h-12 w-12 text-blue-300" />
+				<CollectionIcon className="ml-4 h-12 w-12 text-blue-400" />
 			</h1>
 
 			{projects.map(({ name, description, image, url }) => (

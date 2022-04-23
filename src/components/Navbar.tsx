@@ -25,7 +25,7 @@ const pages: PageData[] = [
 		href: "/projects",
 		title: "Projects",
 		Icon: CollectionIcon,
-		color: "text-blue-300"
+		color: "text-blue-400"
 	},
 	{
 		href: "/anime",
