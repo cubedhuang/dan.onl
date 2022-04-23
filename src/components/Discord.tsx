@@ -175,7 +175,7 @@ function getStatusClass(lanyard: LanyardData | undefined) {
 	const strMap: Record<string, string> = {
 		online: "text-emerald-500",
 		idle: "text-amber-400",
-		dnd: "text-red-500"
+		dnd: "text-rose-400"
 	};
 
 	const str = strMap[lanyard.discord_status];
