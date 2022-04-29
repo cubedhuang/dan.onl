@@ -7,10 +7,10 @@ import type { TrackResponseSuccess } from "../pages/api/track";
 const USER_ID = "299707523370319883";
 
 export default function Discord() {
-	const { status: lanyard } = useLanyard({
-		userId: USER_ID,
-		socket: true
+	const { data } = useLanyard({
+		userId: USER_ID
 	});
+	const lanyard = data?.data;
 	const [track, setTrack] = useState<TrackResponseSuccess | null>(null);
 
 	useEffect(() => {
