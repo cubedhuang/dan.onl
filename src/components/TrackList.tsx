@@ -49,7 +49,7 @@ function Track({ track, priority }: TrackProps) {
 					height={track.album.images[0].height}
 					priority={priority}
 					layout="responsive"
-					className="rounded-lg transition duration-300 group-hover:scale-[1.02]"
+					className="rounded-lg transition duration-300 group-hover:scale-[1.02] bg-slate-900"
 				/>
 			</div>
 			<div className="z-20 absolute inset-2 md:inset-4 flex flex-col justify-end transition duration-300 scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100">
