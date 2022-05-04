@@ -41,7 +41,7 @@ function Track({ track, priority }: TrackProps) {
 			href={track.external_urls.spotify}
 			className="group relative snap-start snap-always rounded-lg before:absolute before:inset-0 before:z-10 before:bg-black before:opacity-0 before:transition before:duration-300 hover:before:opacity-50"
 		>
-			<div className="w-full rounded-lg overflow-hidden">
+			<div className="bg-slate-900 rounded-lg overflow-hidden">
 				<Image
 					src={track.album.images[0].url}
 					alt={track.name}
@@ -49,7 +49,7 @@ function Track({ track, priority }: TrackProps) {
 					height={track.album.images[0].height}
 					priority={priority}
 					layout="responsive"
-					className="rounded-lg transition duration-300 group-hover:scale-[1.02] bg-slate-900"
+					className="rounded-lg transition duration-300 group-hover:scale-[1.02]"
 				/>
 			</div>
 			<div className="z-20 absolute inset-2 md:inset-4 flex flex-col justify-end transition duration-300 scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100">
