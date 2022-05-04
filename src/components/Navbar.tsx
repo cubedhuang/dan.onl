@@ -1,5 +1,6 @@
 import {
 	CollectionIcon,
+	CubeIcon,
 	HomeIcon,
 	MusicNoteIcon,
 	SparklesIcon
@@ -26,6 +27,12 @@ const pages: PageData[] = [
 		title: "Projects",
 		Icon: CollectionIcon,
 		color: "text-blue-400"
+	},
+	{
+		href: "/skills",
+		title: "Skills",
+		Icon: CubeIcon,
+		color: "text-rose-400"
 	},
 	{
 		href: "/anime",

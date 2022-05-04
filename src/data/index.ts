@@ -67,6 +67,9 @@ export const projects: ProjectInfo[] = [
 	}
 ];
 
+export const skillIcons =
+	"https://skillicons.dev/icons?theme=dark&perline=5&i=ts,js,html,css,rust,vscode,tailwind,github,nextjs,react,mongodb,nodejs";
+
 export const anime: AnimeInfo[] = [
 	{
 		name: "Mairimashita! Iruma-kun",
