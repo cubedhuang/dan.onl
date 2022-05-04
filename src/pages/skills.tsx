@@ -1,6 +1,5 @@
 import { CubeIcon } from "@heroicons/react/solid";
 import { InferGetStaticPropsType } from "next";
-import Image from "next/image";
 
 import GenericMeta from "../components/GenericMeta";
 import { skillIcons } from "../data";
