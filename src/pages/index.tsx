@@ -10,19 +10,17 @@ import { socials } from "../data";
 
 const birthday = new Date(2006, 4, 17);
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	return {
 		props: {
-			time: Date.now(),
 			age: differenceInYears(Date.now(), birthday).toString()
 		}
 	};
 }
 
 export default function Home({
-	time,
 	age
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+}: InferGetServerSidePropsType<typeof getStaticProps>) {
 	return (
 		<>
 			<GenericMeta
@@ -61,7 +59,7 @@ export default function Home({
 			</p>
 
 			<p className="mb-4 text-base text-gray-300">
-				Atlanta &middot; <Clock time={time} />
+				Atlanta &middot; <Clock />
 			</p>
 
 			<Discord />
