@@ -7,11 +7,7 @@ import { skillIcons } from "../data";
 export async function getStaticProps() {
 	const svg = await fetch(skillIcons).then(res => res.text());
 
-	return {
-		props: {
-			svg
-		}
-	};
+	return { props: { svg } };
 }
 
 export default function Skills({
@@ -29,8 +25,7 @@ export default function Skills({
 			</h1>
 
 			<p className="mb-4">
-				Some programming skills I&apos;ve picked up over the years, and
-				tools I use often.
+				Skills and technologies I use to build things.
 			</p>
 
 			<div
