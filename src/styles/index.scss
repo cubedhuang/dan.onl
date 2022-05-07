@@ -11,7 +11,7 @@
 	}
 
 	html {
-		@apply overflow-x-hidden overflow-y-auto;
+		@apply overflow-x-hidden overflow-y-scroll;
 		scrollbar-color: #fff2 #000;
 		scrollbar-width: thin;
 	}
