@@ -2,7 +2,7 @@ import formatInTimeZone from "date-fns-tz/formatInTimeZone";
 import { useEffect, useState } from "react";
 
 export function Clock() {
-	const [now, setNow] = useState(Date.now);
+	const [now, setNow] = useState(Date.now());
 
 	useEffect(() => {
 		const id = setInterval(() => {
