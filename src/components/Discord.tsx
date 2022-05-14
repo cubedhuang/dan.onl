@@ -146,8 +146,9 @@ export default function Discord() {
 						<span className="w-4 h-4">
 							<Image
 								src="/images/spotify.png"
-								width={64}
-								height={64}
+								alt=""
+								width={48}
+								height={48}
 								className="w-4 h-4"
 							/>
 						</span>
