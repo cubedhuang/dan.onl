@@ -28,9 +28,10 @@ export default function Discord() {
 
 	return (
 		<>
-			<div className="mb-4 mr-4 w-max max-w-full flex gap-4 items-center px-4 py-2 bg-slate-900 text-base leading-snug rounded-lg">
+			<hr className="mb-4 bg-slate-800 border-none h-0.5" />
+			<div className="mb-2 flex gap-2 items-center text-base leading-snug rounded-lg">
 				{lanyard?.discord_user.avatar ? (
-					<div className="w-14 h-14">
+					<div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
 						<Image
 							src={`https://cdn.discordapp.com/avatars/${USER_ID}/${
 								lanyard?.discord_user.avatar
@@ -47,7 +48,7 @@ export default function Discord() {
 						/>
 					</div>
 				) : (
-					<div className="w-12 h-12 bg-gray-800 rounded-full"></div>
+					<div className="w-16 h-16 md:w-20 md:h-20 bg-gray-800 rounded-full"></div>
 				)}
 				{lanyard ? (
 					<div>
@@ -70,8 +71,8 @@ export default function Discord() {
 					<div className="w-32 opacity-80">Loading...</div>
 				)}
 			</div>
-			<div className="w-max max-w-full flex gap-4 items-center px-4 py-2 bg-green-900 text-base leading-snug rounded-lg">
-				<div className="w-14 h-14">
+			<div className="flex gap-2 items-center text-base leading-snug rounded-lg">
+				<div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
 					<Image
 						src={
 							lanyard?.spotify?.album_art_url ??
@@ -141,7 +142,15 @@ export default function Discord() {
 							)
 						) : null}
 					</p>
-					<p className="opacity-80">
+					<p className="opacity-80 flex items-center gap-1">
+						<span className="w-4 h-4">
+							<Image
+								src="/images/spotify.png"
+								width={64}
+								height={64}
+								className="w-4 h-4"
+							/>
+						</span>
 						{lanyard?.listening_to_spotify ? "Listening on " : null}
 						Spotify
 					</p>
