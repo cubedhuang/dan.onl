@@ -52,13 +52,6 @@ export const projects: ProjectInfo[] = [
 		url: "https://slate.dan.onl"
 	},
 	{
-		name: "Wordle Bot",
-		description:
-			"A simple bot that lets you play unlimited Wordle games in your Discord servers. It uses images to accurately simulate the real Wordle website.",
-		image: "/images/projects/wordle.jpg",
-		url: "https://github.com/cubedhuang/wordle-bot"
-	},
-	{
 		name: "College Board Pseudocode Interpreter",
 		description:
 			"An interpreter for the College Board specified pseudocode language for the Computer Science Principles AP Exam.",
@@ -71,6 +64,13 @@ export const projects: ProjectInfo[] = [
 			"A collection of various random web experiments I've made over the years.",
 		image: "/images/projects/cubedhuang.webp",
 		url: "https://cubedhuang.com"
+	},
+	{
+		name: "Wordle Bot",
+		description:
+			"A simple bot that lets you play unlimited Wordle games in your Discord servers. It uses images to accurately simulate the real Wordle website.",
+		image: "/images/projects/wordle.jpg",
+		url: "https://github.com/cubedhuang/wordle-bot"
 	}
 ];
 
