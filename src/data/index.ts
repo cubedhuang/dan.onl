@@ -52,6 +52,13 @@ export const projects: ProjectInfo[] = [
 		url: "https://slate.dan.onl"
 	},
 	{
+		name: "Discord Embed Creator",
+		description:
+			"A tool that lets you generate code for embeds in discord.js or discord.py easily.",
+		image: "/images/projects/embed.png",
+		url: "https://embed.dan.onl"
+	},
+	{
 		name: "College Board Pseudocode Interpreter",
 		description:
 			"An interpreter for the College Board specified pseudocode language for the Computer Science Principles AP Exam.",
