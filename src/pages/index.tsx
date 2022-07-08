@@ -1,11 +1,12 @@
 import { HomeIcon } from "@heroicons/react/solid";
 import differenceInYears from "date-fns/differenceInYears";
-import { InferGetServerSidePropsType } from "next";
+import type { InferGetServerSidePropsType } from "next";
 import Image from "next/image";
 
 import { Clock } from "../components/Clock";
 import Discord from "../components/Discord";
 import GenericMeta from "../components/GenericMeta";
+import Spotify from "../components/Spotify";
 import { socials } from "../data";
 
 const birthday = new Date(2006, 4, 17);
@@ -62,7 +63,10 @@ export default function Home({
 				Atlanta &middot; <Clock />
 			</p>
 
+			<hr className="mb-4 bg-slate-800 border-none h-0.5" />
+
 			<Discord />
+			<Spotify />
 		</>
 	);
 }
