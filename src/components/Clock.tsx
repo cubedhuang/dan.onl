@@ -1,5 +1,5 @@
 import formatInTimeZone from "date-fns-tz/formatInTimeZone";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "preact/hooks";
 
 export function Clock() {
 	const [now, setNow] = useState(0);

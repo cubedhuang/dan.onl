@@ -1,5 +1,5 @@
 import { MusicNoteIcon } from "@heroicons/react/solid";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "preact/hooks";
 
 import GenericMeta from "../components/GenericMeta";
 import { TrackList } from "../components/TrackList";

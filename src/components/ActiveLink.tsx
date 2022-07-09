@@ -1,6 +1,6 @@
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import { cloneElement } from "preact";
 
 export interface ActiveLinkProps extends LinkProps {
 	children: React.ReactElement;
@@ -19,7 +19,7 @@ export default function ActiveLink({
 
 	return (
 		<Link href={href} {...props}>
-			{React.cloneElement(children, {
+			{cloneElement(children, {
 				className:
 					router.pathname === href
 						? children.props.className

@@ -1,6 +1,6 @@
 import { PauseIcon, PlayIcon } from "@heroicons/react/solid";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "preact/hooks";
 import useSWR from "swr";
 
 import type {
