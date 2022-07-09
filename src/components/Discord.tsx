@@ -44,7 +44,7 @@ export default function Discord() {
 	const lanyard = data?.data;
 
 	return (
-		<div className="mb-2 flex gap-2 items-center text-base leading-snug">
+		<div className="mb-4 flex gap-2 items-center text-base leading-snug">
 			{lanyard?.discord_user.avatar ? (
 				<div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
 					<Image
