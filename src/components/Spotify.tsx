@@ -22,7 +22,8 @@ const fetcher = (url: string) => fetch(url).then(res => res.json());
 export default function Spotify() {
 	const { data } = useSWR<NowPlayingResponseSuccess, NowPlayingResponseError>(
 		"/api/nowPlaying",
-		fetcher
+		fetcher,
+		{ refreshInterval: 5000 }
 	);
 
 	// Get the current track, ignoring episodes because those don't have the same info
@@ -111,9 +112,9 @@ export default function Spotify() {
 				<p className="opacity-80 flex items-center gap-1">
 					{track ? (
 						<span className="block w-full max-w-sm mt-2">
-							<span className="block h-0.5 rounded bg-slate-900">
+							<span className="block h-0.5 rounded overflow-hidden bg-[#5e5e5e]">
 								<span
-									className="block h-full bg-slate-400"
+									className="block h-full bg-white"
 									style={{
 										width: `${
 											(time! / track.duration_ms) * 100
