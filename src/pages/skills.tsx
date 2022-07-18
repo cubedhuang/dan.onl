@@ -25,10 +25,10 @@ export default function Skills() {
 			<div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 gap-2 sm:gap-4">
 				{skills.map(({ name, icon, href, bg }) => (
 					<a
+						key={icon}
 						href={href}
 						target="_blank"
 						rel="noopener noreferrer"
-						key={icon}
 						className="group overflow-hidden isolate relative grid place-items-center rounded-lg aspect-square before:absolute before:inset-0 before:z-10 before:bg-black before:opacity-0 before:transition before:duration-300 hover:before:opacity-50"
 						style={{
 							backgroundColor: bg ?? "#252938"
@@ -36,6 +36,7 @@ export default function Skills() {
 					>
 						<Image
 							src={`${skillIconsEndpoint}${icon}`}
+							alt={name}
 							layout="fill"
 							objectFit="cover"
 							className="-z-10 transition duration-300 group-hover:scale-[1.02]"
