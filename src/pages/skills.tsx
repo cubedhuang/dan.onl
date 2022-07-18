@@ -2,7 +2,7 @@ import { CubeIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 
 import GenericMeta from "../components/GenericMeta";
-import { skills } from "../data";
+import { skills } from "../data/skills";
 
 const skillIconsEndpoint = "https://skillicons.dev/icons?theme=dark&i=";
 

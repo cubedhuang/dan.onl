@@ -2,7 +2,7 @@ import { SparklesIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 
 import GenericMeta from "../components/GenericMeta";
-import { anime } from "../data";
+import { anime } from "../data/anime";
 
 export default function Anime() {
 	return (

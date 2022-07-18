@@ -7,7 +7,7 @@ import { Clock } from "../components/Clock";
 import Discord from "../components/Discord";
 import GenericMeta from "../components/GenericMeta";
 import Spotify from "../components/Spotify";
-import { socials } from "../data";
+import { socials } from "../data/socials";
 
 const birthday = new Date(2006, 4, 17);
 

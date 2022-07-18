@@ -2,7 +2,7 @@ import { CollectionIcon, ExternalLinkIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 
 import GenericMeta from "../components/GenericMeta";
-import { projects } from "../data";
+import { projects } from "../data/projects";
 
 export default function Projects() {
 	return (
