@@ -6,6 +6,10 @@ module.exports = {
 		"./src/pages/**/*.{ts,tsx,js,jsx}"
 	],
 	theme: {
+		screens: {
+			xs: "400px",
+			...defaultTheme.screens
+		},
 		extend: {
 			fontFamily: {
 				heading: ["Inter", ...defaultTheme.fontFamily.sans],

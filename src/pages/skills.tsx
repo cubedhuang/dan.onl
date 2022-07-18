@@ -1,18 +1,12 @@
 import { CubeIcon } from "@heroicons/react/solid";
-import { InferGetStaticPropsType } from "next";
+import Image from "next/image";
 
 import GenericMeta from "../components/GenericMeta";
-import { skillIcons } from "../data";
+import { skills } from "../data";
 
-export async function getStaticProps() {
-	const svg = await fetch(skillIcons).then(res => res.text());
+const skillIconsEndpoint = "https://skillicons.dev/icons?theme=dark&i=";
 
-	return { props: { svg } };
-}
-
-export default function Skills({
-	svg
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Skills() {
 	return (
 		<>
 			<GenericMeta
@@ -28,10 +22,33 @@ export default function Skills({
 				Skills and technologies I use to build things.
 			</p>
 
-			<div
-				dangerouslySetInnerHTML={{ __html: svg }}
-				className="w-full overflow-x-scroll"
-			/>
+			<div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 gap-2 sm:gap-4">
+				{skills.map(({ name, icon, href, bg }) => (
+					<a
+						href={href}
+						target="_blank"
+						rel="noopener noreferrer"
+						key={icon}
+						className="group overflow-hidden isolate relative grid place-items-center rounded-lg aspect-square before:absolute before:inset-0 before:z-10 before:bg-black before:opacity-0 before:transition before:duration-300 hover:before:opacity-50"
+						style={{
+							backgroundColor: bg ?? "#252938"
+						}}
+					>
+						<Image
+							src={`${skillIconsEndpoint}${icon}`}
+							layout="fill"
+							objectFit="cover"
+							className="-z-10 transition duration-300 group-hover:scale-[1.02]"
+							priority={true}
+						/>
+						<div className="z-10 absolute inset-2 md:inset-4 flex flex-col justify-end transition duration-300 scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100">
+							<h2 className="text-lg xs:text-xl md:text-2xl font-bold leading-tight">
+								{name}
+							</h2>
+						</div>
+					</a>
+				))}
+			</div>
 		</>
 	);
 }
