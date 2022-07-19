@@ -56,9 +56,9 @@ export default function Navbar() {
 					href={href}
 					key={href}
 					activeClass="after:scale-x-100"
-					nonActiveClass="after:scale-x-0"
+					nonActiveClass="after:scale-x-0 after:opacity-0 hover:after:scale-x-50 hover:after:opacity-100"
 				>
-					<a className="py-2 flex items-center hover:after:scale-x-100 after:transition relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-white after:rounded after:origin-right hover:after:origin-left">
+					<a className="py-2 flex items-center after:transition relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-white after:rounded">
 						{title}
 						<Icon className={`w-5 h-5 ml-2 ${color}`} />
 					</a>
