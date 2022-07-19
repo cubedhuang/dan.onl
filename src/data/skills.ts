@@ -37,6 +37,12 @@ export const skills: SkillInfo[] = [
 		bg: "#d73c22"
 	},
 	{
+		name: "MongoDB",
+		icon: "mongodb",
+		href: "https://www.mongodb.com/",
+		bg: "#0f3430"
+	},
+	{
 		name: "VS Code",
 		icon: "vscode",
 		href: "https://code.visualstudio.com/"
@@ -60,12 +66,6 @@ export const skills: SkillInfo[] = [
 		name: "React",
 		icon: "react",
 		href: "https://reactjs.org/"
-	},
-	{
-		name: "MongoDB",
-		icon: "mongodb",
-		href: "https://www.mongodb.com/",
-		bg: "#0f3430"
 	},
 	{
 		name: "Node.js",

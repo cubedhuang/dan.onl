@@ -22,7 +22,7 @@ export default function Skills() {
 				Skills and technologies I use to build things.
 			</p>
 
-			<div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 gap-2 sm:gap-4 fade-in">
+			<div className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-6 gap-2 sm:gap-4 fade-in">
 				{skills.map(({ name, icon, href, bg }) => (
 					<a
 						key={icon}
@@ -42,8 +42,8 @@ export default function Skills() {
 							className="-z-10 transition duration-300 group-hover:scale-[1.02]"
 							priority={true}
 						/>
-						<div className="z-10 absolute inset-2 md:inset-4 flex flex-col justify-end transition duration-300 scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100">
-							<h2 className="text-lg xs:text-xl md:text-2xl font-bold leading-tight">
+						<div className="z-10 absolute inset-2 flex flex-col justify-end transition duration-300 scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100">
+							<h2 className="text-base font-bold leading-tight">
 								{name}
 							</h2>
 						</div>
