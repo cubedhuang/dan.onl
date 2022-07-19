@@ -55,14 +55,14 @@
 		}
 	}
 
-	.main > * {
+	.fade-in > * {
 		animation-name: fade;
 		animation-duration: 0.3s;
 		animation-fill-mode: both;
 	}
 
 	@for $i from 1 through 20 {
-		.main > :nth-child(#{$i}) {
+		.fade-in > :nth-child(#{$i}) {
 			animation-delay: #{$i / 10}s;
 		}
 	}
