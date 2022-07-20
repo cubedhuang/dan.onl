@@ -38,7 +38,10 @@ export default function Projects() {
 
 						<div className="flex absolute bottom-2 right-2 gap-2">
 							{stack.map(({ name, icon, src }) => (
-								<div className="relative group cursor-pointer flex justify-center">
+								<div
+									key={name}
+									className="relative group cursor-pointer flex justify-center"
+								>
 									<Image
 										key={name}
 										src={
