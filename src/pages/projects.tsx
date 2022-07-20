@@ -1,8 +1,10 @@
 import { CollectionIcon, ExternalLinkIcon } from "@heroicons/react/solid";
-import Image from "next/image";
+import Image from "next/future/image";
 
 import GenericMeta from "../components/GenericMeta";
 import { projects } from "../data/projects";
+
+const skillIconsEndpoint = "https://skillicons.dev/icons?theme=dark&i=";
 
 export default function Projects() {
 	return (
@@ -17,7 +19,7 @@ export default function Projects() {
 				<CollectionIcon className="ml-4 h-12 w-12 text-blue-400" />
 			</h1>
 
-			{projects.map(({ name, description, image, url }) => (
+			{projects.map(({ name, description, image, url, stack }) => (
 				<div
 					key={name}
 					className="mb-4 flex flex-col rounded-lg bg-slate-900"
@@ -26,11 +28,36 @@ export default function Projects() {
 						<Image
 							src={image}
 							alt=""
-							layout="fill"
-							objectFit="cover"
+							width={1200}
+							height={800}
+							// layout="fill"
+							// objectFit="cover"
 							priority={true}
-							className="rounded-t-lg transition duration-500 group-hover:scale-105"
+							className="absolute top-0 left-0 w-full h-full object-cover object-center rounded-t-lg transition duration-500 group-hover:scale-105"
 						/>
+
+						<div className="flex absolute bottom-2 right-2 gap-2">
+							{stack.map(({ name, icon, src }) => (
+								<div className="relative group cursor-pointer flex justify-center">
+									<Image
+										key={name}
+										src={
+											icon !== undefined
+												? `${skillIconsEndpoint}${icon}`
+												: src
+										}
+										width={120}
+										height={120}
+										alt={name}
+										className="w-6 h-6 md:w-10 md:h-10 rounded-[25%]"
+										quality={100}
+									/>
+									<div className="absolute mb-1 px-2 py-1 text-white text-sm bg-slate-900 opacity-0 group-hover:opacity-100 transition pointer-events-none bottom-full rounded-lg w-max">
+										{name}
+									</div>
+								</div>
+							))}
+						</div>
 					</div>
 					<div className="p-4">
 						<div className="flex items-start">
