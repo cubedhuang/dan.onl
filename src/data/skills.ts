@@ -36,6 +36,7 @@ export const skills: SkillInfo[] = [
 		href: "https://www.rust-lang.org/",
 		bg: "#d73c22"
 	},
+
 	{
 		name: "MongoDB",
 		icon: "mongodb",
@@ -43,19 +44,41 @@ export const skills: SkillInfo[] = [
 		bg: "#0f3430"
 	},
 	{
-		name: "VS Code",
-		icon: "vscode",
-		href: "https://code.visualstudio.com/"
+		name: "Discord API",
+		icon: "bots",
+		href: "https://discord.com/developers/docs/",
+		bg: "#5663e9"
 	},
 	{
-		name: "Tailwind CSS",
-		icon: "tailwind",
-		href: "https://tailwindcss.com/"
+		name: "Docker",
+		icon: "docker",
+		href: "https://www.docker.com/",
+		bg: "#4793eb"
+	},
+	{
+		name: "Node.js",
+		icon: "nodejs",
+		href: "https://nodejs.org/en/"
 	},
 	{
 		name: "GitHub",
 		icon: "github",
 		href: "https://github.com/"
+	},
+	{
+		name: "Python",
+		icon: "python",
+		href: "https://www.python.org/"
+	},
+	{
+		name: "Linux Systems",
+		icon: "linux",
+		href: "https://www.linux.org/"
+	},
+	{
+		name: "Tailwind CSS",
+		icon: "tailwind",
+		href: "https://tailwindcss.com/"
 	},
 	{
 		name: "Next.js",
@@ -66,10 +89,5 @@ export const skills: SkillInfo[] = [
 		name: "React",
 		icon: "react",
 		href: "https://reactjs.org/"
-	},
-	{
-		name: "Node.js",
-		icon: "nodejs",
-		href: "https://nodejs.org/en/"
 	}
 ];

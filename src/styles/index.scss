@@ -61,7 +61,7 @@
 		animation-fill-mode: both;
 	}
 
-	@for $i from 1 through 20 {
+	@for $i from 1 through 24 {
 		.fade-in > :nth-child(#{$i}) {
 			animation-delay: #{$i / 10}s;
 		}
