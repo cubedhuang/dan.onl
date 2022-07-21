@@ -63,7 +63,8 @@
 
 	@for $i from 1 through 24 {
 		.fade-in > :nth-child(#{$i}) {
-			animation-delay: #{$i / 10}s;
+			// animation-delay: #{$i / 10}s;
+			animation-delay: 0.2s;
 		}
 	}
 

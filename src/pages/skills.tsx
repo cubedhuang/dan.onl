@@ -22,7 +22,7 @@ export default function Skills() {
 				Skills and technologies I use to build things.
 			</p>
 
-			<div className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-5 gap-2 sm:gap-4 fade-in">
+			<div className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-5 gap-2 sm:gap-4">
 				{skills.map(({ name, icon, href, bg }) => (
 					<a
 						key={icon}
