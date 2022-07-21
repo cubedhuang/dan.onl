@@ -30,8 +30,6 @@ export default function Projects() {
 							alt=""
 							width={1200}
 							height={800}
-							// layout="fill"
-							// objectFit="cover"
 							priority={true}
 							className="absolute top-0 left-0 w-full h-full object-cover object-center rounded-t-lg transition duration-500 group-hover:scale-105"
 						/>
@@ -74,6 +72,7 @@ export default function Projects() {
 								href={url}
 								target="_blank"
 								rel="noreferrer noopener"
+								title={`Visit ${name}`}
 								className="ml-auto transition hover:opacity-80"
 							>
 								<ExternalLinkIcon className="w-6 h-6" />
