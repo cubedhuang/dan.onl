@@ -1,41 +1,27 @@
-import Image from "next/image";
-import { LanyardData, useLanyard } from "react-use-lanyard";
+import formatDistance from "date-fns/formatDistance";
+import Image from "next/future/image";
+import { useEffect, useState } from "preact/hooks";
+import { Activity, LanyardData, useLanyard } from "react-use-lanyard";
 
 const USER_ID = "299707523370319883";
 
-function getStatusString(lanyard: LanyardData | undefined) {
-	if (!lanyard) return "Loading...";
+const statusColors: Record<string, string> = {
+	online: "bg-emerald-500",
+	idle: "bg-amber-400",
+	dnd: "bg-rose-400"
+};
 
-	const strMap: Record<string, string> = {
-		online: "Online",
-		idle: "Idle",
-		dnd: "Do Not Disturb"
-	};
+const getStatusColor = (
+	status: "online" | "idle" | "dnd" | "offline" | undefined
+) => {
+	if (!status) return "bg-gray-400";
 
-	const str = strMap[lanyard.discord_status];
+	const str = statusColors[status];
 
-	if (!str) return "Offline";
-
-	return `${str} on ${
-		lanyard.active_on_discord_mobile ? "Mobile" : "Desktop"
-	}`;
-}
-
-function getStatusClass(lanyard: LanyardData | undefined) {
-	if (!lanyard) return "text-gray-400";
-
-	const strMap: Record<string, string> = {
-		online: "text-emerald-500",
-		idle: "text-amber-400",
-		dnd: "text-rose-400"
-	};
-
-	const str = strMap[lanyard.discord_status];
-
-	if (!str) return "text-gray-400";
+	if (!str) return "bg-gray-400";
 
 	return str;
-}
+};
 
 export default function Discord() {
 	const { data } = useLanyard({
@@ -43,10 +29,15 @@ export default function Discord() {
 	});
 	const lanyard = data?.data;
 
+	// 2: listening, 4: custom status
+	const otherActivities = lanyard?.activities.filter(
+		activity => activity.type !== 2 && activity.type !== 4
+	);
+
 	return (
 		<div className="mb-4 flex gap-2 items-center text-base leading-snug">
 			{lanyard?.discord_user.avatar ? (
-				<div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
+				<div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0 relative">
 					<Image
 						src={`https://cdn.discordapp.com/avatars/${USER_ID}/${
 							lanyard?.discord_user.avatar
@@ -61,6 +52,11 @@ export default function Discord() {
 						priority={true}
 						className="rounded-full"
 					/>
+					<div
+						className={`absolute bottom-0.5 right-0.5 w-3 h-3 md:w-4 md:h-4 rounded-full ring-[3px] md:ring-4 ring-black ${getStatusColor(
+							lanyard?.discord_status
+						)}`}
+					></div>
 				</div>
 			) : (
 				<div className="w-16 h-16 md:w-20 md:h-20 bg-gray-800 rounded-full"></div>
@@ -78,13 +74,60 @@ export default function Discord() {
 							? lanyard?.activities[0]?.state
 							: null}
 					</p>
-					<p className={getStatusClass(lanyard)}>
-						{getStatusString(lanyard)}
-					</p>
+					<OtherActivities activities={otherActivities} />
 				</div>
 			) : (
 				<div className="w-32 opacity-80">Loading...</div>
 			)}
 		</div>
+	);
+}
+
+const activityTypes = [
+	"Playing",
+	"Streaming",
+	"Listening to",
+	"Watching",
+	"Custom Status: ",
+	"Competing in"
+];
+
+const getActivityType = (type: number) => {
+	return activityTypes[type];
+};
+
+function OtherActivities({
+	activities
+}: {
+	activities: Activity[] | undefined;
+}) {
+	const [now, setNow] = useState(new Date());
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setNow(new Date());
+		}, 5000);
+
+		return () => clearInterval(interval);
+	}, []);
+
+	return (
+		<>
+			{activities?.map(activity => (
+				<p key={activity.id} className="flex-grow">
+					<span className="opacity-80">
+						{getActivityType(activity.type)}
+					</span>{" "}
+					{activity.name}{" "}
+					<span className="opacity-80">
+						for{" "}
+						{formatDistance(
+							now,
+							activity.timestamps?.start ?? activity.created_at
+						)}
+					</span>
+				</p>
+			))}
+		</>
 	);
 }
