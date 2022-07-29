@@ -96,11 +96,11 @@ const getActivityType = (type: number) => {
 	return activityTypes[type];
 };
 
-function OtherActivities({
-	activities
-}: {
+interface OtherActivitiesProps {
 	activities: Activity[] | undefined;
-}) {
+}
+
+function OtherActivities({ activities }: OtherActivitiesProps) {
 	const [now, setNow] = useState(new Date());
 
 	useEffect(() => {
