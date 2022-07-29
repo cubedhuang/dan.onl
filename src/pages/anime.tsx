@@ -1,5 +1,5 @@
 import { SparklesIcon } from "@heroicons/react/solid";
-import Image from "next/image";
+import Image from "next/future/image";
 
 import GenericMeta from "../components/GenericMeta";
 import { anime } from "../data/anime";
@@ -30,9 +30,9 @@ export default function Anime() {
 					<Image
 						src={image}
 						alt={name}
-						layout="fill"
-						objectFit="cover"
-						className="rounded-lg transition duration-300 group-hover:scale-[1.02]"
+						width={1200}
+						height={240}
+						className="absolute top-0 left-0 w-full h-full object-cover rounded-lg transition duration-300 group-hover:scale-[1.02]"
 						priority={i < 3}
 					/>
 					<div className="z-20 w-full transition duration-300 scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100">

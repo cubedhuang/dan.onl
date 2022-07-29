@@ -1,5 +1,5 @@
 import { CubeIcon } from "@heroicons/react/solid";
-import Image from "next/image";
+import Image from "next/future/image";
 
 import GenericMeta from "../components/GenericMeta";
 import { skills } from "../data/skills";
@@ -37,9 +37,9 @@ export default function Skills() {
 						<Image
 							src={`${skillIconsEndpoint}${icon}`}
 							alt={name}
-							layout="fill"
-							objectFit="cover"
-							className="-z-10 transition duration-300 group-hover:scale-[1.02]"
+							width={256}
+							height={256}
+							className="absolute top-0 left-0 w-full h-full object-cover -z-10 transition duration-300 group-hover:scale-[1.02]"
 							priority={true}
 						/>
 						<div className="z-10 absolute inset-2 flex flex-col justify-end transition duration-300 scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100">

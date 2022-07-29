@@ -1,7 +1,7 @@
 import { HomeIcon } from "@heroicons/react/solid";
 import differenceInYears from "date-fns/differenceInYears";
 import type { InferGetServerSidePropsType } from "next";
-import Image from "next/image";
+import Image from "next/future/image";
 
 import { Clock } from "../components/Clock";
 import Discord from "../components/Discord";
