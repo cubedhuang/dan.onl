@@ -60,7 +60,7 @@ export default function Spotify() {
 					width={256}
 					height={256}
 					priority={true}
-					className="rounded-lg"
+					className="w-16 h-16 md:w-20 md:h-20 object-cover object-center rounded-lg"
 				/>
 			</div>
 			<div className="basis-full">
