@@ -60,7 +60,7 @@ export default function Home({
 			</p>
 
 			<p className="mb-4 text-base text-gray-300">
-				Atlanta &middot; <Clock />
+				<Clock />
 			</p>
 
 			<hr className="mb-4 bg-slate-800 border-none h-0.5" />

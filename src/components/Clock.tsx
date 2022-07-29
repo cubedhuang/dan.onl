@@ -1,5 +1,17 @@
-import formatInTimeZone from "date-fns-tz/formatInTimeZone";
 import { useEffect, useState } from "preact/hooks";
+
+const formatter = new Intl.DateTimeFormat("en-US", {
+	day: "numeric",
+	weekday: "long",
+	year: "numeric",
+	month: "long",
+	hour: "numeric",
+	minute: "numeric",
+	second: "numeric",
+	hour12: false,
+	timeZone: "America/New_York",
+	timeZoneName: "short"
+});
 
 export function Clock() {
 	const [now, setNow] = useState(0);
@@ -14,13 +26,5 @@ export function Clock() {
 		return () => clearInterval(id);
 	}, []);
 
-	return (
-		<>
-			{formatInTimeZone(
-				now,
-				"America/New_York",
-				"eeee, do MMMM y · HH:mm:ss"
-			)}
-		</>
-	);
+	return <>{formatter.format(now).replace("at", "·")}</>;
 }
