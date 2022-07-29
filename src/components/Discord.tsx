@@ -23,6 +23,10 @@ const getStatusColor = (
 	return str;
 };
 
+const capitalize = (str: string) => {
+	return str[0].toUpperCase() + str.slice(1);
+};
+
 export default function Discord() {
 	const { data } = useLanyard({
 		userId: USER_ID
@@ -55,8 +59,15 @@ export default function Discord() {
 					<div
 						className={`absolute bottom-0.5 right-0.5 w-3 h-3 md:w-4 md:h-4 rounded-full ring-[3px] md:ring-4 ring-black ${getStatusColor(
 							lanyard?.discord_status
-						)}`}
-					></div>
+						)} cursor-pointer group flex justify-center`}
+					>
+						<div className="text-sm absolute mb-1 px-2 py-1 bg-slate-900 opacity-0 group-hover:opacity-100 transition pointer-events-none bottom-full rounded-lg w-max">
+							{capitalize(lanyard?.discord_status)} on{" "}
+							{lanyard.active_on_discord_mobile
+								? "Mobile"
+								: "Desktop"}
+						</div>
+					</div>
 				</div>
 			) : (
 				<div className="w-16 h-16 md:w-20 md:h-20 bg-gray-800 rounded-full"></div>
