@@ -61,7 +61,7 @@ export default function Discord() {
 							lanyard?.discord_status
 						)} cursor-pointer group flex justify-center`}
 					>
-						<div className="text-sm absolute mb-1 px-2 py-1 bg-slate-900 opacity-0 group-hover:opacity-100 transition pointer-events-none bottom-full rounded-lg w-max">
+						<div className="text-sm absolute z-10 mb-1 px-2 py-1 bg-slate-900 opacity-0 group-hover:opacity-100 transition pointer-events-none bottom-full rounded-lg w-max">
 							{capitalize(lanyard?.discord_status)} on{" "}
 							{lanyard.active_on_discord_mobile
 								? "Mobile"
