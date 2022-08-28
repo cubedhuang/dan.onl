@@ -1,7 +1,7 @@
 import formatDistance from "date-fns/formatDistance";
 import Image from "next/future/image";
 import { useEffect, useState } from "preact/hooks";
-import { Activity, LanyardData, useLanyard } from "react-use-lanyard";
+import { Activity, useLanyard } from "react-use-lanyard";
 
 const USER_ID = "299707523370319883";
 
@@ -28,10 +28,10 @@ const capitalize = (str: string) => {
 };
 
 export default function Discord() {
-	const { data } = useLanyard({
-		userId: USER_ID
+	const { status: lanyard } = useLanyard({
+		userId: USER_ID,
+		socket: true
 	});
-	const lanyard = data?.data;
 
 	// 2: listening, 4: custom status
 	const otherActivities = lanyard?.activities.filter(
