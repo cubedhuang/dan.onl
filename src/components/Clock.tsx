@@ -26,5 +26,5 @@ export function Clock() {
 		return () => clearInterval(id);
 	}, []);
 
-	return <>{formatter.format(now).replace("at", "·")}</>;
+	return <>{formatter.format(now).replace(" at", " ·")}</>;
 }
