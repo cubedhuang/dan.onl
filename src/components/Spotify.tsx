@@ -26,25 +26,21 @@ export default function Spotify() {
 		{ refreshInterval: 5000 }
 	);
 
-	// Get the current track, ignoring episodes because those don't have the same info
-	// and I don't wanna deal with that.
-	const track = data?.item && "album" in data.item ? data.item : null;
-
-	const [time, setTime] = useState(data?.progress_ms);
+	const [time, setTime] = useState(0);
 
 	useEffect(() => {
-		if (!data?.progress_ms || !track) return;
+		if (!data?.progessMs || !data.track) return;
 
 		const started = Date.now();
 
 		const interval = setInterval(() => {
 			setTime(
-				data.is_playing
-					? Math.min(
-							data.progress_ms! + Date.now() - started,
-							track.duration_ms
+				data.isPaused
+					? data.progessMs
+					: Math.min(
+							data.progessMs! + Date.now() - started,
+							data?.track?.duration_ms!
 					  )
-					: data.progress_ms
 			);
 		}, 100);
 
@@ -55,7 +51,10 @@ export default function Spotify() {
 		<div className="flex gap-2 items-center text-base leading-snug">
 			<div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
 				<Image
-					src={track?.album.images[0]?.url ?? "/images/emptysong.jpg"}
+					src={
+						data?.track?.album.images[0]?.url ??
+						"/images/emptysong.jpg"
+					}
 					alt="Spotify Album Art"
 					width={256}
 					height={256}
@@ -65,19 +64,19 @@ export default function Spotify() {
 			</div>
 			<div className="basis-full">
 				<p>
-					{track ? (
+					{data?.track ? (
 						<>
 							<a
-								href={track.external_urls.spotify}
+								href={data.track.external_urls.spotify}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="font-bold border-b border-[#fff4] transition hover:border-white"
 							>
-								{track.name}
+								{data.track.name}
 							</a>{" "}
 							by{" "}
-							{track.artists.map((artist, i) => (
-								<span key={track.id + artist.id}>
+							{data.track.artists.map((artist, i) => (
+								<span key={data.track?.id + artist.id}>
 									<a
 										href={artist.external_urls.spotify}
 										target="_blank"
@@ -86,7 +85,9 @@ export default function Spotify() {
 									>
 										{artist.name}
 									</a>
-									{i < track.artists.length - 1 ? ", " : null}
+									{i < data.track?.artists.length! - 1
+										? ", "
+										: null}
 								</span>
 							))}
 						</>
@@ -95,29 +96,30 @@ export default function Spotify() {
 					)}
 				</p>
 				<p className="opacity-80">
-					{track ? (
+					{data?.track ? (
 						<>
 							on{" "}
 							<a
-								href={track.album.external_urls.spotify}
+								href={data.track.album.external_urls.spotify}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="border-b border-[#fff4] transition hover:border-white"
 							>
-								{track.album.name}
+								{data.track.album.name}
 							</a>
 						</>
 					) : null}
 				</p>
 				<p className="opacity-80 flex items-center gap-1">
-					{track ? (
+					{data?.isPlayingNow && data.track ? (
 						<span className="block w-full max-w-sm mt-2">
 							<span className="block h-0.5 rounded overflow-hidden bg-[#5e5e5e]">
 								<span
 									className="block h-full bg-white"
 									style={{
 										width: `${
-											(time! / track.duration_ms) * 100
+											(time! / data.track.duration_ms) *
+											100
 										}%`
 									}}
 								/>
@@ -127,14 +129,14 @@ export default function Spotify() {
 									{formatDuration(time!)}
 								</span>
 								<span>
-									{data?.is_playing ? (
-										<PauseIcon className="text-white h-4 w-4" />
-									) : (
+									{data?.isPaused ? (
 										<PlayIcon className="text-white h-4 w-4" />
+									) : (
+										<PauseIcon className="text-white h-4 w-4" />
 									)}
 								</span>
 								<span className="basis-full text-right">
-									{formatDuration(track.duration_ms)}
+									{formatDuration(data.track.duration_ms)}
 								</span>
 							</span>
 						</span>
@@ -149,6 +151,7 @@ export default function Spotify() {
 									className="w-4 h-4"
 								/>
 							</span>
+							{data?.track ? <>Last Played on </> : null}
 							Spotify
 						</>
 					)}

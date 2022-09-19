@@ -1,7 +1,15 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import Spotify from "spotify-web-api-node";
 
-export type NowPlayingResponseSuccess = SpotifyApi.CurrentlyPlayingResponse;
+export interface NowPlayingResponseSuccess {
+	/**
+	 * Whether the track is from recently played or currently playing.
+	 */
+	isPlayingNow: boolean;
+	isPaused: boolean;
+	progessMs: number;
+	track: SpotifyApi.TrackObjectFull | null;
+}
 export type NowPlayingResponseError = { error: unknown };
 export type NowPlayingResponse =
 	| NowPlayingResponseSuccess
@@ -31,9 +39,33 @@ export default async function handler(
 			expirationTime = Date.now() + response.body.expires_in * 1000;
 		}
 
+		let response: NowPlayingResponseSuccess = {
+			isPlayingNow: false,
+			isPaused: false,
+			progessMs: 0,
+			track: null
+		};
 		const playing = await api.getMyCurrentPlayingTrack();
 
-		res.status(200).json(playing.body);
+		if (playing.body?.item && "album" in playing.body.item) {
+			response.isPlayingNow = true;
+			response.track = playing.body.item;
+			response.isPaused = !playing.body.is_playing;
+			response.progessMs = playing.body.progress_ms ?? 0;
+		} else {
+			const lastPlayed = await api.getMyRecentlyPlayedTracks({
+				limit: 1
+			});
+
+			if (lastPlayed.body?.items[0]?.track) {
+				response.track = lastPlayed.body.items[0]
+					.track as SpotifyApi.TrackObjectFull;
+			}
+		}
+
+		console.log(response);
+
+		res.status(200).json(response);
 	} catch (err) {
 		res.status(500).json({ error: (err as any)?.message });
 	}
