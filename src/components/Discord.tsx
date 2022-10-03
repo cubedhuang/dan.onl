@@ -1,4 +1,4 @@
-import formatDistance from "date-fns/formatDistance";
+import formatDistanceStrict from "date-fns/formatDistanceStrict";
 import Image from "next/future/image";
 import { useEffect, useState } from "preact/hooks";
 import { Activity, useLanyard } from "react-use-lanyard";
@@ -117,7 +117,7 @@ function OtherActivities({ activities }: OtherActivitiesProps) {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setNow(new Date());
-		}, 5000);
+		}, 1000);
 
 		return () => clearInterval(interval);
 	}, []);
@@ -132,7 +132,7 @@ function OtherActivities({ activities }: OtherActivitiesProps) {
 					{activity.name}{" "}
 					<span className="opacity-80">
 						for{" "}
-						{formatDistance(
+						{formatDistanceStrict(
 							now,
 							activity.timestamps?.start ?? activity.created_at
 						)}
