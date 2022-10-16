@@ -18,7 +18,7 @@
 		scrollbar-width: thin;
 	}
 
-	*:focus {
+	*:focus-visible {
 		outline: 2px solid white;
 		outline-offset: 4px;
 	}
@@ -77,7 +77,6 @@
 	@for $i from 1 through 24 {
 		.fade-in > :nth-child(#{$i}) {
 			animation-delay: #{$i / 20}s;
-			// animation-delay: 0.2s;
 		}
 	}
 
