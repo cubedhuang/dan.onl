@@ -20,6 +20,27 @@ export interface ProjectInfo {
 
 export const projects: ProjectInfo[] = [
 	{
+		name: "sona nimi",
+		description:
+			"Online, interactive toki pona dictionary, using public data about popular words and compounds.",
+		image: "/images/projects/sona.png",
+		url: "https://nimi.dan.onl",
+		stack: [
+			{
+				name: "TailwindCSS",
+				icon: "tailwindcss"
+			},
+			{
+				name: "SvelteKit",
+				icon: "svelte"
+			},
+			{
+				name: "TypeScript",
+				icon: "ts"
+			}
+		]
+	},
+	{
 		name: "Boids: Flocking Simulation",
 		description:
 			"A 2D simulation of flocking behavior with thousands of boids.",
