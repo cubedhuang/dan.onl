@@ -22,7 +22,7 @@ export const projects: ProjectInfo[] = [
 	{
 		name: "sona nimi",
 		description:
-			"Online, interactive toki pona dictionary, using public data about popular words and compounds.",
+			"Online, interactive toki pona dictionary which uses public data about popular words and compounds.",
 		image: "/images/projects/sona.png",
 		url: "https://nimi.dan.onl",
 		stack: [
