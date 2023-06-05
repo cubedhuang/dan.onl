@@ -20,7 +20,7 @@ export interface ProjectInfo {
 
 export const projects: ProjectInfo[] = [
 	{
-		name: "sona nimi",
+		name: "nimi.li",
 		description:
 			"Online, interactive toki pona dictionary which uses public data about popular words and compounds.",
 		image: "/images/projects/sona.png",
