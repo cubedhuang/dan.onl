@@ -50,7 +50,7 @@ export default function Projects() {
 										width={120}
 										height={120}
 										alt={name}
-										className="w-full h-full rounded-[25%]"
+										className="w-full h-full rounded-[25%] bg-[#242938]"
 										quality={100}
 									/>
 									<div className="absolute mb-1 px-2 py-1 text-white text-sm bg-slate-900 opacity-0 group-hover:opacity-100 transition pointer-events-none bottom-full rounded-lg w-max">

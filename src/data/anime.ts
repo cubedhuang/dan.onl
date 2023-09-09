@@ -7,16 +7,16 @@ export interface AnimeInfo {
 
 export const anime: AnimeInfo[] = [
 	{
+		name: "Oshi No Ko",
+		description: "",
+		image: "/images/anime/ai.jpg",
+		url: "https://anilist.co/anime/150672/Oshi-no-Ko/"
+	},
+	{
 		name: "Kaguya-sama: Love is War",
 		description: "",
 		image: "/images/anime/kaguya.png",
 		url: "https://anilist.co/anime/101921/Kaguyasama-wa-Kokurasetai-Tensaitachi-no-Renai-Zunousen/"
-	},
-	{
-		name: "Mairimashita! Iruma-kun",
-		description: "Demon school!",
-		image: "/images/anime/demon.jpg",
-		url: "https://anilist.co/anime/107693/Mairimashita-Irumakun/"
 	},
 	{
 		name: "Tokyo Ghoul",
@@ -29,12 +29,6 @@ export const anime: AnimeInfo[] = [
 		description: "",
 		image: "/images/anime/jujutsu.jpg",
 		url: "https://anilist.co/anime/113415/Jujutsu-Kaisen/"
-	},
-	{
-		name: "Komi Can't Communicate",
-		description: "",
-		image: "/images/anime/komi.jpg",
-		url: "https://anilist.co/anime/133965/Komisan-wa-Komyushou-desu/"
 	},
 	{
 		name: "Saiki K.",
@@ -83,11 +77,5 @@ export const anime: AnimeInfo[] = [
 		description: "Puberty syndrome?",
 		image: "/images/anime/mai.jpg",
 		url: "https://anilist.co/anime/101291/Rascal-Does-Not-Dream-of-Bunny-Girl-Senpai/"
-	},
-	{
-		name: "Beastars",
-		description: "Carnivores.",
-		image: "/images/anime/beastars.png",
-		url: "https://anilist.co/anime/107660/BEASTARS/"
 	}
 ];

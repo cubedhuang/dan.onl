@@ -41,6 +41,31 @@ export const projects: ProjectInfo[] = [
 		]
 	},
 	{
+		name: "debating.live",
+		description:
+			"Real-time platform for timer sharing, speech tracking, and more for Public Forum debate.",
+		image: "/images/projects/debate.png",
+		url: "https://debating.live",
+		stack: [
+			{
+				name: "TailwindCSS",
+				icon: "tailwindcss"
+			},
+			{
+				name: "Socket.IO",
+				src: "/images/icons/socketio.svg"
+			},
+			{
+				name: "SvelteKit",
+				icon: "svelte"
+			},
+			{
+				name: "TypeScript",
+				icon: "ts"
+			}
+		]
+	},
+	{
 		name: "Boids: Flocking Simulation",
 		description:
 			"A 2D simulation of flocking behavior with thousands of boids.",
