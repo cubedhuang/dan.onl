@@ -3,6 +3,12 @@ import Image from "next/future/image";
 import { useEffect, useState } from "preact/hooks";
 import { Activity, useLanyard } from "react-use-lanyard";
 
+declare module "react-use-lanyard" {
+	interface DiscordUser {
+		display_name: string;
+	}
+}
+
 const USER_ID = "299707523370319883";
 
 const statusColors: Record<string, string> = {
@@ -75,9 +81,9 @@ export default function Discord() {
 			{lanyard ? (
 				<div>
 					<p>
-						{lanyard?.discord_user.username}
-						<span className="opacity-80">
-							#{lanyard?.discord_user.discriminator ?? "0000"}
+						{lanyard?.discord_user.display_name}
+						<span className="ml-2 opacity-80">
+							{lanyard?.discord_user.username}
 						</span>
 					</p>
 					<p>
