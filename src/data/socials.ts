@@ -8,16 +8,20 @@ export const socials: SocialInfo[] = [
 	{
 		name: "GitHub",
 		image: "/images/github.png",
-		url: "https://github.com/cubedhuang"
+		url: "https://github.com/raitnigol"
 	},
 	{
-		name: "Twitter",
-		image: "/images/twitter.png",
-		url: "https://twitter.com/cubedhuang"
+		name: "Facebook",
+		image: "/images/facebook.png",
+		url: "https://facebook.com/rait.nigol"
 	},
+	{
+		name: "LinkedIn",
+		image: "/images/linkedin.png",
+		url: "https://www.linkedin.com/in/raitnigol/"
 	{
 		name: "Spotify",
 		image: "/images/spotify.png",
-		url: "https://open.spotify.com/user/22ah5au2dajm7rqn3znkf4tnq?si=95e89d77cb0046f5"
+		url: "https://open.spotify.com/user/1190538422"
 	}
 ];
