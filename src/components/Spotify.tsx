@@ -151,7 +151,7 @@ export default function Spotify() {
 									className="w-4 h-4"
 								/>
 							</span>
-							{data?.track ? <>Last Played on </> : null}
+							{data?.track ? <>Last played on </> : null}
 							Spotify
 						</>
 					)}
