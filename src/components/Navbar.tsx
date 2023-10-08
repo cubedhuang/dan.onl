@@ -44,7 +44,7 @@ const pages: PageData[] = [
 	{
 		href: "/games",
 		title: "Games",
-		Icon: ControllerIcon,
+		Icon: GamepadIcon,
 		color: "text-green-400"
 	},
 	{
