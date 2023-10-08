@@ -9,7 +9,7 @@ const formatter = new Intl.DateTimeFormat("en-US", {
 	minute: "numeric",
 	second: "numeric",
 	hour12: false,
-	timeZone: "America/New_York",
+	timeZone: "Europe/Tallinn", // Use "Europe/Tallinn" for Estonia (Tartu)
 	timeZoneName: "short"
 });
 
