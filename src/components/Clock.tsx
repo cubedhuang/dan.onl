@@ -1,6 +1,6 @@
 import { useEffect, useState } from "preact/hooks";
 
-const formatter = new Intl.DateTimeFormat("et-EE", {
+const formatter = new Intl.DateTimeFormat("en-US", {
 	day: "numeric",
 	weekday: "long",
 	year: "numeric",
