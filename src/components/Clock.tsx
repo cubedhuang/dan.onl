@@ -26,9 +26,10 @@ export function Clock() {
 		return () => clearInterval(id);
 	}, []);
 
-	return (
-		<>
-			{formatter.format(now).replace(" at", " · ").replace(/^24:/, "00:")}
-		</>
-	);
+	 const formattedTime = formatter.format(now);
+	
+	  // Check if it's midnight (00:00) and replace "24" with "00"
+	  const displayTime = formattedTime.replace(" at", " · ").replace(" 24:", " 00:");
+	
+	  return <>{displayTime}</>;
 }
