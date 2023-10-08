@@ -9,7 +9,7 @@ declare module "react-use-lanyard" {
 	}
 }
 
-const USER_ID = "299707523370319883";
+const USER_ID = "300672961256488960";
 
 const statusColors: Record<string, string> = {
 	online: "bg-emerald-500",
