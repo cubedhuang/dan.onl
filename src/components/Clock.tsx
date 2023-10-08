@@ -9,7 +9,7 @@ const formatter = new Intl.DateTimeFormat("en-US", {
 	minute: "numeric",
 	second: "numeric",
 	hour12: false,
-	timeZone: "Europe/Tallinn",
+	timeZone: "Europe/Copenhagen",
 	timeZoneName: "short"
 });
 
@@ -26,11 +26,5 @@ export function Clock() {
 		return () => clearInterval(id);
 	}, []);
 
-	const estoniaTime = new Date(now);
-	const estoniaHour = estoniaTime.getHours();
-	const estoniaFormattedHour = estoniaHour < 10 ? `0${estoniaHour}` : estoniaHour;
-
-	return (
-		<>{formatter.format(estoniaTime).replace(" at", ` · ${estoniaFormattedHour}:`)}</>
-	);
+	return <>{formatter.format(now).replace(" at", " ·")}</>;
 }
