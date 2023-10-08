@@ -1,3 +1,3 @@
-# dan.onl
+# nigol.ee
 
-This is my personal website, written with Next.js, TypeScript, and TailwindCSS (totally not the 4th time I've rewritten it).
+forked project, personal portfolio website
