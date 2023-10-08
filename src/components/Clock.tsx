@@ -8,7 +8,7 @@ const formatter = new Intl.DateTimeFormat("en-US", {
 	hour: "numeric",
 	minute: "numeric",
 	second: "numeric",
-	hour12: false,
+	hour12: true, // Use 24-hour format
 	timeZone: "Europe/Tallinn", // Use "Europe/Tallinn" for Estonia (Tartu)
 	timeZoneName: "short"
 });
@@ -26,5 +26,10 @@ export function Clock() {
 		return () => clearInterval(id);
 	}, []);
 
-	return <>{formatter.format(now).replace(" at", " ·")}</>;
+	// Manually set the desired time (00:55) for demonstration purposes
+	const estoniaTime = new Date(now);
+	estoniaTime.setHours(0); // Set hours to 00
+	estoniaTime.setMinutes(59); // Set minutes to 55
+
+	return <>{formatter.format(estoniaTime).replace(" at", " ·")}</>;
 }
