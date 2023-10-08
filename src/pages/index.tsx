@@ -9,7 +9,7 @@ import GenericMeta from "../components/GenericMeta";
 import Spotify from "../components/Spotify";
 import { socials } from "../data/socials";
 
-const birthday = new Date(2006, 4, 17);
+const birthday = new Date(2002, 5, 26);
 
 export async function getStaticProps() {
 	return {
@@ -36,7 +36,7 @@ export default function Home({
 			<p className="mb-4">
 				Hi! I&apos;m Nigol, a{" "}
 				<span className="text-blue-400">{age}-year-old sysadmin</span>{" "}
-				from <span className="text-rose-400">Atlanta</span>.
+				from <span className="text-rose-400">Tartu</span>, Estonia.
 			</p>
 
 			<p className="mb-2 flex flex-wrap gap-2 items-center">
