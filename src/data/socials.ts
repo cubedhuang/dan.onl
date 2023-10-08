@@ -16,13 +16,13 @@ export const socials: SocialInfo[] = [
         url: "https://facebook.com/rait.nigol"
     },
     {
-        name: "LinkedIn",
-        image: "/images/linkedin.png",
-        url: "https://www.linkedin.com/in/raitnigol/"
-    },
-    {
         name: "Spotify",
         image: "/images/spotify.png",
         url: "https://open.spotify.com/user/1190538422"
     }
+    {
+        name: "LinkedIn",
+        image: "/images/linkedin.png",
+        url: "https://www.linkedin.com/in/raitnigol/"
+    },
 ];
