@@ -25,17 +25,17 @@ export default function Home({
 	return (
 		<>
 			<GenericMeta
-				title="Daniel 👋"
+				title="nigol.ee"
 				description="My portfolio and personal website."
 			/>
 
 			<h1 className="heading mb-2">
-				Daniel! <HomeIcon className="ml-4 h-12 w-12 text-orange-400" />
+				Nigol! <HomeIcon className="ml-4 h-12 w-12 text-orange-400" />
 			</h1>
 
 			<p className="mb-4">
-				Hi! I&apos;m Daniel, a{" "}
-				<span className="text-blue-400">{age}-year-old developer</span>{" "}
+				Hi! I&apos;m Nigol, a{" "}
+				<span className="text-blue-400">{age}-year-old sysadmin</span>{" "}
 				from <span className="text-rose-400">Atlanta</span>.
 			</p>
 
