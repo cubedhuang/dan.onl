@@ -75,9 +75,8 @@ export default function Discord() {
 						</div>
 					</div>
 				</div>
-									<p>test2</p>
 			) : (
-				<div className="w-16 h-16 md:w-20 md:h-20 bg-gray-800 rounded-full"><p>test</p></div>
+				<div className="w-16 h-16 md:w-20 md:h-20 bg-gray-800 rounded-full"></div>
 			)}
 			{lanyard ? (
 				<div>
