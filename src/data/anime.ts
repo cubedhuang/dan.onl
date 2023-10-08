@@ -13,12 +13,6 @@ export const anime: AnimeInfo[] = [
 		url: "https://anilist.co/anime/150672/Oshi-no-Ko/"
 	},
 	{
-		name: "Kaguya-sama: Love is War",
-		description: "",
-		image: "/images/anime/kaguya.png",
-		url: "https://anilist.co/anime/101921/Kaguyasama-wa-Kokurasetai-Tensaitachi-no-Renai-Zunousen/"
-	},
-	{
 		name: "Tokyo Ghoul",
 		description: "Cannibalism.",
 		image: "/images/anime/tokyo.jpg",
