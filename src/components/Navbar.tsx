@@ -46,6 +46,7 @@ const pages: PageData[] = [
 		title: "Games",
 		Icon: ControllerIcon,
 		color: "text-green-400"
+	},
 	{
 		href: "/music",
 		title: "Music",
