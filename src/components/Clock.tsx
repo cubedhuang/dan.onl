@@ -26,5 +26,8 @@ export function Clock() {
 		return () => clearInterval(id);
 	}, []);
 
-	return <>{formatter.format(now).replace(" at", " ·")}</>;
+	const estoniaTime = new Date(now);
+	estoniaTime.setHours(estoniaTime.getHours() + 3); // Add 3 hours to adjust to GMT+3
+
+	return <>{formatter.format(estoniaTime).replace(" at", " ·")}</>;
 }
