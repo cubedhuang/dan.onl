@@ -9,7 +9,7 @@ const formatter = new Intl.DateTimeFormat("en-US", {
 	minute: "numeric",
 	second: "numeric",
 	hour12: false,
-	timeZone: "Europe/Copenhagen",
+	timeZone: "Europe/Tallinn",
 	timeZoneName: "short"
 });
 
