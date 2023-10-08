@@ -1,6 +1,6 @@
 import { useEffect, useState } from "preact/hooks";
 
-const formatter = new Intl.DateTimeFormat("en-US", {
+const formatter = new Intl.DateTimeFormat("et-EE", {
 	day: "numeric",
 	weekday: "long",
 	year: "numeric",
@@ -26,8 +26,5 @@ export function Clock() {
 		return () => clearInterval(id);
 	}, []);
 
-	const estoniaTime = new Date(now);
-	estoniaTime.setHours(estoniaTime.getHours() + 3); // Add 3 hours to adjust to GMT+3
-
-	return <>{formatter.format(estoniaTime).replace(" at", " ·")}</>;
+	return <>{formatter.format(now).replace(" at", " ·")}</>;
 }
