@@ -5,9 +5,9 @@ const formatter = new Intl.DateTimeFormat("en-US", {
 	weekday: "long",
 	year: "numeric",
 	month: "long",
-	hour: "2-digit",
-	minute: "2-digit",
-	second: "2-digit",
+	hour: "numeric",
+	minute: "numeric",
+	second: "numeric",
 	hour12: false,
 	timeZone: "Europe/Copenhagen",
 	timeZoneName: "short"
@@ -26,5 +26,9 @@ export function Clock() {
 		return () => clearInterval(id);
 	}, []);
 
-	return <>{formatter.format(now).replace(" at", " ·")}</>;
+	return (
+		<>
+			{formatter.format(now).replace(" at", " · ").replace(/^24:/, "00:")}
+		</>
+	);
 }
