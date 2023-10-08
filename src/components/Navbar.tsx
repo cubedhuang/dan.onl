@@ -35,11 +35,16 @@ const pages: PageData[] = [
 		color: "text-rose-400"
 	},
 	{
-		href: "/anime",
-		title: "Anime",
+		href: "/tv_shows",
+		title: "TV Shows",
 		Icon: SparklesIcon,
 		color: "text-yellow-300"
 	},
+	{
+		href: "/games",
+		title: "Games",
+		Icon: GamesIcon,
+		color: "text-green-400"
 	{
 		href: "/music",
 		title: "Music",
