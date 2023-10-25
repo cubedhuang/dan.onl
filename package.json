@@ -14,7 +14,7 @@
 		"@heroicons/react": "^1.0.6",
 		"@next/bundle-analyzer": "^12.2.1",
 		"date-fns": "^2.28.0",
-		"next": "^12.2.2",
+		"next": "^13.5.0",
 		"next-plugin-preact": "^3.0.7",
 		"preact": "^10.9.0",
 		"preact-render-to-string": "^5.2.0",
